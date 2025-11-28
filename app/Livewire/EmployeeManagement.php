@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Layout;
 use Livewire\WithPagination;
 
-#[Layout('layouts.admin')]
+#[Layout('layouts.admin.admin')]
 class EmployeeManagement extends Component
 {
     use WithPagination;

@@ -8,7 +8,7 @@ use Livewire\Attributes\Layout;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
-#[Layout('layouts.admin')]
+#[Layout('layouts.admin.admin')]
 class Dashboard extends Component
 {
    

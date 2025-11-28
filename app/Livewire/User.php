@@ -8,7 +8,7 @@ use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Spatie\Permission\Models\Role;
 
-#[Layout('layouts.admin')]
+#[Layout('layouts.admin.admin')]
 
 class User extends Component
 {
