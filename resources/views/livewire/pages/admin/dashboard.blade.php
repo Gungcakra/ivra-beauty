@@ -1,4 +1,4 @@
-<x-slot:title>Dashboard</x-slot:title>
+<x-slot:title>Ivra Beauty - Dashboard</x-slot:title>
 
 <div class="flex container flex-col">
     <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
@@ -13,7 +13,7 @@
                 <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                     <!--begin::Item-->
                     <li class="breadcrumb-item text-muted">
-                        <a href="{{ route('dashboard') }}" class="text-muted text-hover-primary">Home</a>
+                        <a href="{{ route('admin.dashboard') }}" class="text-muted text-hover-primary">Home</a>
                     </li>
                     <!--end::Item-->
                     <!--begin::Item-->

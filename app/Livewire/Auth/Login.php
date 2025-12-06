@@ -14,7 +14,7 @@ class Login extends Component
 
     protected $rules = [
         'email' => 'required|email',
-        'password' => 'required|min:6',
+        'password' => 'required',
     ];
 
     public function login()
@@ -43,7 +43,7 @@ class Login extends Component
         session()->invalidate();
         session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect()->route('admin.login');
     }
 
     public function render()

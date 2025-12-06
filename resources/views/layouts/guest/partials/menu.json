@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Home",
+        "url": "/",
+        "active": true
+    },
+    {
+        "title": "About",
+        "url": "/#about",
+        "active": false
+    },
+    {
+        "title": "Services",
+        "url": "/#services",
+        "active": false
+    },
+    {
+        "title": "Gallery",
+        "url": "/#galleries",
+        "active": false
+    },
+    {
+        "title": "Testimonials",
+        "url": "/#testimonials",
+        "active": false
+    }
+]

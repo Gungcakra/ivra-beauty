@@ -61,7 +61,7 @@
                                 <!--begin::Username-->
                                 <div class="d-flex flex-column">
                                     <div class="fw-bold d-flex align-items-center fs-5">{{ Auth::user()->name }}
-                                    <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">{{ Auth::user()->roles->pluck('name')->first() }}</span></div>
+                                    <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">{{ Auth::user()->role }}</span></div>
                                     <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">{{ Auth::user()->email }}</a>
                                 </div>
                                 <!--end::Username-->
@@ -147,7 +147,7 @@
                         </div> 
                         
                         <div class="menu-item px-5 ">
-                            <a href="{{ route('logout') }}" class="menu-link px-5 bg-danger text-white">Sign Out</a>
+                            <a href="{{ route('admin.logout') }}" class="menu-link px-5 bg-danger text-white">Sign Out</a>
                         </div>
                         <!--end::Menu item-->
                     </div>

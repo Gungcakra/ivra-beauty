@@ -71,7 +71,7 @@
                     , icon: "success"
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = "{{ route('dashboard') }}";
+                        window.location.href = "{{ route('admin.dashboard') }}";
 
                     }
                 });

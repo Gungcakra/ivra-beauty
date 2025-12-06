@@ -2,6 +2,7 @@
 
 <html lang="en">
 <!--begin::Head-->
+
 <head>
     <base href="" />
     <title>{{ $title }}</title>
@@ -27,13 +28,14 @@
     <link href="{{ asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-  
+
 
 
     @livewireStyles
 </head>
 <!--end::Head-->
 <!--begin::Body-->
+
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
     <!--begin::Theme mode setup on page load-->
     <script>
@@ -54,7 +56,6 @@
             }
             document.documentElement.setAttribute("data-bs-theme", themeMode);
         }
-
     </script>
     <!--end::Theme mode setup on page load-->
     <!--begin::App-->
@@ -62,12 +63,12 @@
         <!--begin::Page-->
         <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
             <!--begin::Header-->
-            @include('layouts.partials.admin.navbar')
+            @include('layouts.admin.partials.navbar')
             <!--end::Header-->
             <!--begin::Wrapper-->
             <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
                 <!--begin::Sidebar-->
-                @include('layouts.partials.admin.sidebar')
+                @include('layouts.admin.partials.sidebar')
                 <!--end::Sidebar-->
                 <!--begin::Main-->
                 <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
@@ -77,7 +78,7 @@
 
                     <!--end::Content wrapper-->
                     <!--begin::Footer-->
-                    @include('layouts.partials.admin.footer')
+                    @include('layouts.admin.partials.footer')
                     <!--end::Footer-->
                 </div>
                 <!--end:::Main-->
@@ -94,6 +95,21 @@
     <script data-navigate-once src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script data-navigate-once src="https://unpkg.com/qr-scanner@1.4.2/qr-scanner.legacy.min.js"></script>
 
+    @if(session()->has('success-alert'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire("Berhasil!", "{{ session('success-alert') }}", "success");
+        });
+    </script>
+    @endif
+
+    @if(session()->has('error-alert'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire("Gagal!", "{{ session('error-alert') }}", "error");
+        });
+    </script>
+    @endif
     <script data-navigate-once>
         document.addEventListener('livewire:init', function() {
             KTMenu.createInstances();
@@ -114,57 +130,32 @@
                 toastr.error(message);
             });
 
+            Livewire.on('alert-error', (message) => {
+                Swal.fire({
+                    title: message,
+                    icon: "error",
+                    confirmButtonText: "OK",
+                });
+            });
+
+            Livewire.on('alert-success', (message) => {
+                Swal.fire(message, "success");
+            });
+
             Livewire.hook('morphed', () => {
                 KTMenu.createInstances();
             });
         });
-
-
-
-    function handleSearchServices() {
-    Livewire.dispatch('loadDataService');
-    }
-
-    function handleSearchSparepart() {
-        Livewire.dispatch('loadDataSparepart');
-    }
-      
-    function printInvoice() {
-
-        const printContents = document.querySelector('.main').innerHTML;
-        const originalContents = document.body.innerHTML;
-
-        const printStyle = document.createElement('style');
-        printStyle.innerHTML = `
-            @page {
-                size: A4 portrait;
-                margin: 20mm;
-            }
-        `;
-        document.head.appendChild(printStyle);
-
-        document.body.innerHTML = printContents;
-        document.title = "Invoice";
-        window.print();
-        document.body.innerHTML = originalContents;
-        document.head.removeChild(printStyle);
-    }
-
-    function backOperational() {
-        window.Livewire.navigate('serviceoperational');
-    }
-        
-
+        y
     </script>
     <script>
         var hostUrl = "{{ asset('assets/')}}";
-
     </script>
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script data-navigate-once src="{{ asset('assets/plugins/global/plugins.bundle.js')}}"></script>
     <script data-navigate-once src="{{ asset('assets/js/scripts.bundle.js')}}"></script>
-	<script data-navigate-once src="{{ asset('assets/js/custom/widgets.js') }}"></script>
-   
+    <script data-navigate-once src="{{ asset('assets/js/custom/widgets.js') }}"></script>
+
     @stack('scripts')
     @stack('script')
     {{-- <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
@@ -209,4 +200,5 @@
     <!--end::Javascript-->
 </body>
 <!--end::Body-->
+
 </html>

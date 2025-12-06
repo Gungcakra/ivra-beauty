@@ -6,5 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reservasi extends Model
 {
-    //
+    protected $guarded = ['id'];
+
+    public function pelanggan()
+    {
+        return $this->belongsTo(Pelanggan::class);
+    }
+
+    public function layanan()
+    {
+        return $this->belongsTo(Layanan::class);
+    }
+    
 }

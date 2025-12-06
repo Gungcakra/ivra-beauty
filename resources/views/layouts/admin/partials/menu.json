@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Dashboard",
+        "url": "/admin/dashboard",
+        "icon": "fas fa-home"
+    },
+    {
+        "title": "Master Data",
+        "url": "",
+        "icon": "fas fa-database",
+        "subMenu": [
+            {
+                "title": "Users",
+                "url": "/admin/user"
+            },
+            {
+                "title": "Layanan",
+                "url": "/admin/layanan"
+            }
+        ]
+    }
+   
+]

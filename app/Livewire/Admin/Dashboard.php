@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Admin;
 
 use App\Models\Menu;
 use Livewire\Component;
@@ -14,12 +14,9 @@ class Dashboard extends Component
    
     public function mount()
     {
-        $userPermissions = Auth::user()->roles->flatMap(function ($role) {
-            return $role->permissions->pluck('name');
-        });
-
-        if (!$userPermissions->contains('dashboard')) {
-            abort(403, 'Unauthorized action.');
+        $userRole = Auth::user()->role;
+        if ($userRole !== 'admin') {
+            abort(403, 'Unauthorized access.');
         }
     }
     public function render()
