@@ -35,7 +35,7 @@
 
     @include('layouts.guest.partials.footer')
     <!-- footer one -->
-    
+
 
 
     <!-- js scripts -->
@@ -53,6 +53,66 @@
     <script src="{{  asset('guest/assets/js/plugins/scrollTrigger.min.js')}}"></script>
     <script src="{{  asset('guest/assets/js/app.js')}}"></script>
     <script defer src="{{  asset('guest/assets/js/index.js')}}"></script>
+    <script src="{{  asset('guest/assets/js/sweetalert2@11.js')}}"></script>
+    <script data-navigate-once>
+        document.addEventListener('livewire:init', function() {
+
+
+            Livewire.on('success', (message, isClose = true, type = 'success') => {
+                toastr[type](message);
+
+                if (isClose) {
+                    $('.modal').modal('hide');
+                }
+            });
+
+            Livewire.on('delete-success', (message) => {
+                Swal.fire("Data Dihapus!", message, "success");
+            });
+
+            Livewire.on('error', (message) => {
+                toastr.error(message);
+            });
+
+            Livewire.on('alert-error', (message) => {
+                Swal.fire({
+                    title: message,
+                    icon: "error",
+                    confirmButtonText: "OK",
+                });
+            });
+
+            Livewire.on('alert-success', (message) => {
+                Swal.fire(message, "success");
+            });
+
+        });
+    </script>
+    @if (session('alert-success'))
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil',
+                text: '{{ session("alert-success") }}',
+                confirmButtonColor: '#3085d6',
+            });
+        });
+    </script>
+    @endif
+
+    @if (session('alert-error'))
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Terjadi Kesalahan',
+                text: '{{ session("alert-error") }}',
+                confirmButtonColor: '#d33',
+            });
+        });
+    </script>
+    @endif
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"6e6444122ed94892b6dff27396bb5627","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin=" anonymous"></script>
 </body>
 

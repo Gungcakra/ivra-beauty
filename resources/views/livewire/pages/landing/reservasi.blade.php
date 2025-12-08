@@ -23,64 +23,71 @@
    <section class="pt-80 pb-80 z-3 position-relative">
      <div class="container">
        <div class="col-lg-12 z-3">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h4 class="mb-4">Form Reservasi {{ $dataLayanan->nama_layanan }}</h4>
-            <form wire:submit.prevent="reservasi">
-              <div class="row g-3 g-xl-4 mb-4">
-                <div class="col-6">
-                  <label for="tanggal" class="d-block text-n500 text-lg fw-medium mb-3">Tanggal</label>
-                  <input type="date" placeholder="Pilih tanggal" class="salonix-input bg4" wire:model="tanggal" />
-                </div>
-                <div class="col-6">
-                  <label for="waktu" class="d-block text-n500 text-lg fw-medium mb-3">Waktu</label>
-                  <input type="time" placeholder="Pilih waktu" class="salonix-input bg4" wire:model="waktu" />
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="card-footer">
-            <h5 class="mb-3">Detail</h5>
-            <div class="d-flex align-items-start gap-3 flex-column flex-wrap">
-              <div class="info-item">
-                <i class="ph ph-user fs-3"></i>
-                <div>
-                  <p class="mb-0">Nama</p>
-                  <h4 class="mb-0 fw-medium">{{ Auth::user()->pelanggan?->nama }}</h4>
-                </div>
-              </div>
-              <div class="info-item">
-                <i class="ph ph-envelope fs-3"></i>
-                <div>
-                  <p class="mb-0">Email</p>
-                  <h4 class="mb-0 fw-medium">{{ Auth::user()->email }}</h4>
-                </div>
-              </div>
-              <div class="info-item">
-                <i class="ph ph-phone fs-3"></i>
-                <div>
-                  <p class="mb-0">No Telp</p>
-                  <h4 class="mb-0 fw-medium">{{ Auth::user()->pelanggan?->no_telp }}</h4>
-                </div>
-              </div>
-              <div class="info-item">
-                <i class="ph ph-tag fs-3"></i>
-                <div>
-                  <p class="mb-0">Layanan</p>
-                  <h4 class="mb-0 fw-medium">{{ $dataLayanan->nama_layanan }}</h4>
-                </div>
-              </div>
-              <div class="info-item">
-                <i class="ph ph-money fs-3"></i>
-                <div>
-                  <p class="mb-0">Harga</p>
-                  <h4 class="mb-0 fw-medium">RP {{ number_format($dataLayanan->harga, 0, ',', '.') }}</h4>
-                </div>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-lg fw-bold btn-primary mt-3 w-100">Reservasi</button>
-          </div>
-        </div>
+         <div class="card shadow-sm">
+           <div class="card-body">
+             <h4 class="mb-4">Form Reservasi {{ $dataLayanan->nama_layanan }}</h4>
+
+           </div>
+           <div class="card-footer">
+             <h5 class="mb-3">Detail</h5>
+             <div class="d-flex align-items-start gap-3 flex-column flex-wrap">
+               <div class="info-item">
+                 <div class="d-flex align-items-center">
+                   <i class="ph ph-user fs-3"></i>
+                   <p class="mb-0">Nama</p>
+                 </div>
+                 <h4 class="mb-0 fw-medium">{{ Auth::user()->pelanggan?->nama }}</h4>
+               </div>
+               <div class="info-item">
+                 <div class="d-flex align-items-center">
+                   <i class="ph ph-envelope fs-3"></i>
+                   <p class="mb-0">Email</p>
+                 </div>
+                 <h4 class="mb-0 fw-medium">{{ Auth::user()->email }}</h4>
+               </div>
+               <div class="info-item">
+                 <div class="d-flex align-items-center">
+                   <i class="ph ph-phone fs-3"></i>
+                   <p class="mb-0">No Telp</p>
+                 </div>
+                 <h4 class="mb-0 fw-medium">{{ Auth::user()->pelanggan?->no_telp }}</h4>
+               </div>
+               <div class="info-item">
+                 <div class="d-flex align-items-center">
+                   <i class="ph ph-tag fs-3"></i>
+                   <p class="mb-0">Layanan</p>
+                 </div>
+                 <h4 class="mb-0 fw-medium">{{ $dataLayanan->nama_layanan }}</h4>
+               </div>
+               <div class="info-item">
+                 <div class="d-flex align-items-center">
+                   <i class="ph ph-money fs-3"></i>
+                   <p class="mb-0">Harga</p>
+                 </div>
+                 <h4 class="mb-0 fw-medium">RP {{ number_format($dataLayanan->harga, 0, ',', '.') }}</h4>
+               </div>
+             </div>
+             <form wire:submit.prevent="reservasi">
+               <div class="row g-3 g-xl-4 my-2">
+                 <div class="col-6">
+                   <div class="d-flex align-items-center mb-2">
+                     <i class="ph ph-calendar fs-3"></i>
+                     <p class="mb-0"> Tanggal</p>
+                   </div>
+                   <input type="date" placeholder="Pilih tanggal" class="salonix-input bg4" wire:model="tanggal" />
+                 </div>
+                 <div class="col-6">
+                    <div class="d-flex align-items-center mb-2">
+                      <i class="ph ph-clock fs-3"></i>
+                      <p class="mb-0"> Waktu</p>
+                    </div>
+                   <input type="time" placeholder="Pilih waktu" class="salonix-input bg4" wire:model="waktu" />
+                 </div>
+               </div>
+               <button type="submit" class="btn btn-lg fw-bold btn-primary mt-3 w-100">Reservasi</button>
+             </form>
+           </div>
+         </div>
        </div>
      </div>
  </div>
