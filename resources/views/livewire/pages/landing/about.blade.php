@@ -1,6 +1,6 @@
 <!-- About section start -->
-    <section id="about" class="about">
-        <h2 class="vertical dmSansFont">About us</h2>
+    <section id="tentang" class="about">
+        <h2 class="vertical dmSansFont">Tentang Kami</h2>
         <div class="counter-wrapper position-relative z-3">
             <div class="container counter">
                 <div class="row g-3 text-center counter-inner">

@@ -15,14 +15,14 @@ class Reservasi extends Component
     public $tanggal, $waktu;
     public function mount($layanan)
     {
-        
+
         $this->layanan = $layanan;
         $this->dataLayanan = Layanan::find($this->layanan);
     }
 
     public function reservasi()
     {
-        try{
+        try {
             $this->validate([
                 'tanggal' => 'required|date|after_or_equal:today',
                 'waktu' => 'required',
@@ -34,12 +34,12 @@ class Reservasi extends Component
                 'id_layanan' => $this->dataLayanan->id,
                 'tanggal' => $this->tanggal,
                 'waktu' => $this->waktu,
-            'harga' => $this->dataLayanan->harga,
+                'harga' => $this->dataLayanan->harga,
             ]);
 
             return redirect()->route('landing')->with('alert-success', 'Reservasi berhasil dibuat');
         } catch (\Exception $e) {
-            $this->dispatch('alert-error',$e->getMessage());
+            $this->dispatch('alert-error', $e->getMessage());
         }
     }
 

@@ -1,27 +1,27 @@
 [
     {
-        "title": "Home",
+        "title": "Beranda",
         "url": "/",
         "active": true
     },
     {
-        "title": "About",
-        "url": "/#about",
+        "title": "Tentang",
+        "url": "/#tentang",
         "active": false
     },
     {
-        "title": "Services",
-        "url": "/#services",
+        "title": "Layanan",
+        "url": "/#layanan",
         "active": false
     },
     {
-        "title": "Gallery",
-        "url": "/#galleries",
+        "title": "Galeri",
+        "url": "/#galeri",
         "active": false
     },
     {
-        "title": "Testimonials",
-        "url": "/#testimonials",
+        "title": "Testimoni",
+        "url": "/#testimoni",
         "active": false
     }
 ]

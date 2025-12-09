@@ -1,7 +1,7 @@
  <!-- Showcase Gallery Start -->
-    <section class="gallery pt-120 pb-120 position-relative" id="galleries">
+    <section class="gallery pt-120 pb-120 position-relative" id="galeri">
         <div class="right-text d-none d-xl-block">
-            <h2 class="vertical dmSansFont">Gallery</h2>
+            <h2 class="vertical dmSansFont">Galeri</h2>
         </div>
 
         <div class="container">

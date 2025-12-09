@@ -1,8 +1,8 @@
 
     <!-- testimonials section start -->
-    <section id="testimonials" class="testimonial bg_left pt-120 pb-120" style="background-image: url(guest/assets/images/client-bg-1.webp)">
+    <section id="testimoni" class="testimonial bg_left pt-120 pb-120" style="background-image: url(guest/assets/images/client-bg-1.webp)">
         <div class="right-text">
-            <h2 class="vertical dmSansFont">testimonial</h2>
+            <h2 class="vertical dmSansFont">testimoni</h2>
         </div>
         <div class="line"></div>
         <div class="line two"></div>
