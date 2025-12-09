@@ -4,6 +4,7 @@ namespace App\Livewire\Guest;
 
 use App\Models\Pelanggan;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
@@ -25,7 +26,7 @@ class Register extends Component
 
             $user = User::create([
                 'email' => $this->email,
-                'password' => bcrypt($this->password),
+                'password' => Hash::make($this->password),
                 'role' => 'guest',
             ]);
 

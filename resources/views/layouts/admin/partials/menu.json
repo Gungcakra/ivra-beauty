@@ -16,8 +16,17 @@
             {
                 "title": "Layanan",
                 "url": "/admin/layanan"
+            },
+            {
+                "title": "Reservasi",
+                "url": "/admin/reservasi"
             }
         ]
+    },
+    {
+        "title": "Reservasi",
+        "url": "/admin/operasional/reservasi",
+        "icon": "fas fa-calendar-check"
     }
    
 ]

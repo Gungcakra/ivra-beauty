@@ -15,10 +15,19 @@
                     <a class="d-flex align-items-center" href="{{ $item['url'] }}">{{ $item['title'] }}</a>
                 </li>
                 @endforeach
+
+                @if(Auth::check())
+                <li>
+                    <a href="{{ route('guest.riwayat-reservasi') }}" class="d-flex align-items-center">Riwayat Reservasi</a>
+                </li>
+                <li>
+                    <a href="{{ route('guest.profile') }}" class="d-flex align-items-center">Profile</a>
+                </li>
+                @endif
             </ul>
-            
+
             @if(Auth::check())
-            <a href="{{ route('guest.logout') }}" class="primary-btn max-w-full w-100">Log Out</a>
+            <a href="{{ route('guest.logout') }}" class="primary-btn max-w-full w-100 m-1">Log Out</a>
             @else
             <a href="{{ route('guest.login') }}" class="primary-btn max-w-full w-100">Log In</a>
             @endif
@@ -44,9 +53,14 @@
                     <a class="d-flex align-items-center" href="{{ $item['url'] }}">{{ $item['title'] }}</a>
                 </li>
                 @endforeach
+                @if(Auth::check())
                 <li>
-                    <a href="services.html" class="primary-btn d-lg-none">Book Now</a>
+                    <a href="{{ route('guest.riwayat-reservasi') }}" class="d-flex align-items-center">Riwayat Reservasi</a>
                 </li>
+                <li>
+                    <a href="{{ route('guest.profile') }}" class="d-flex align-items-center">Profile</a>
+                </li>
+                @endif
             </ul>
             <div class="d-flex align-items-center gap-1 gap-sm-2 gap-md-3">
                 <!-- <button aria-label="open search popup" class="search-popup-btn text-white text-xl"><i class="ph ph-magnifying-glass"></i></button>
@@ -91,7 +105,7 @@
                         </div>
                     </div>
                 </div> -->
-            
+
                 @if(Auth::check())
                 <a href="{{ route('guest.logout') }}" class="primary-btn d-none d-lg-block playFairFont">Log Out </a>
                 @else

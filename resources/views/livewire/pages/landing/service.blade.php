@@ -1,7 +1,7 @@
- <section class="services" id="services">
+ <section class="services" id="layanan">
     
      <div class="left-text d-none d-xxl-block">
-         <h2 class="vertical-white dmSansFont">services</h2>
+         <h2 class="vertical-white dmSansFont">layanan</h2>
      </div>
 
      <div class="container">
