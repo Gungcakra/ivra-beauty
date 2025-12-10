@@ -1,5 +1,5 @@
 <div class="d-flex flex-column flex-column-fluid">
-    <x-slot:title>Ivra Beauty - Masterdata User</x-slot:title>
+    <x-slot:title>Ivra Beauty - Masterdata Promosi</x-slot:title>
     <!--begin::Toolbar-->
     <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
         <!--begin::Toolbar container-->
@@ -7,7 +7,7 @@
             <!--begin::Page title-->
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                 <!--begin::Title-->
-                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Masterdata User</h1>
+                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Masterdata Promosi</h1>
                 <!--end::Title-->
                 <!--begin::Breadcrumb-->
                 <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -22,13 +22,13 @@
                     </li>
                     <!--end::Item-->
                     <!--begin::Item-->
-                    <li class="breadcrumb-item text-muted">User</li>
+                    <li class="breadcrumb-item text-muted">Promosi</li>
                     <!--end::Item-->
                 </ul>
                 <!--end::Breadcrumb-->
             </div>
             <div class="d-flex items-center">
-                {{-- <input type="text" class="form-control form-control-solid" placeholder="Search User Name" id="search" autocomplete="off" wire:model.live.dobonce.300ms="search" /> --}}
+                {{-- <input type="text" class="form-control form-control-solid" placeholder="Search Promosi Name" id="search" autocomplete="off" wire:model.live.dobonce.300ms="search" /> --}}
             </div>
             <!--end::Page title-->
             <!--begin::Actions-->
@@ -37,7 +37,7 @@
                 {{-- <a href="#" class="btn btn-sm fw-bold btn-secondary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Rollover</a> --}}
                 <!--end::Secondary button-->
                 <!--begin::Primary button-->
-                <a class="btn btn-sm fw-bold btn-primary" href="{{ route('admin.user.create' ) }}">Tambah User</a>
+                <a class="btn btn-sm fw-bold btn-primary" href="{{ route('admin.promosi.create' ) }}">Tambah Promosi</a>
                 <!--end::Primary button-->
             </div>
             <!--end::Actions-->
@@ -50,41 +50,24 @@
         <!--begin::Content container-->
         <div id="kt_app_content_container" class="app-container container-xxl">
             <div class="card p-5">
-                <div class="flex w-full">
-                    <div class="d-flex align-items-center position-relative my-1">
-                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-5">
-                            <span class="path1"></span>
-                            <span class="path2"></span>
-                        </i>
-                        <input
-                            type="text"
-                            data-kt-customer-table-filter="search"
-                            class="form-control form-control-solid w-250px ps-12"
-                            placeholder="Cari User"
-                            wire:model.live.debounce.100ms="search" />
-                    </div>
-
-                </div>
                 <div class="table-responsive">
                     <table id="kt_datatable_zero_configuration" class="table table-row-bordered gy-5">
                         <thead>
                             <tr class="fw-semibold fs-6 text-muted">
                                 <th>No</th>
                                 <th>Aksi</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Role</th>
+                                <th>Gambar</th>
                             </tr>
                         </thead>
                         <tbody>
                             @if (count($data) < 1) <tr>
-                                <td colspan="6" class="text-center">Tidak ada data</td>
+                                <td colspan="5" class="text-center">Tidak ada data</td>
                                 </tr>
                                 @else
 
-                                @foreach ( $data as $index => $user)
+                                @foreach ( $data as $index => $promosi)
 
-                                <tr wire:key="user-{{ $user->id }}">
+                                <tr wire:key="promosi-{{ $promosi->id }}">
                                     <td>{{ $index + 1 }}</td>
                                     <td>
                                         <a href="#" class="btn btn-sm btn-primary btn-flex btn-center " data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Aksi
@@ -93,42 +76,27 @@
                                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-3">
-                                                <a href="{{ route('admin.user.edit', $user->id) }}" class="menu-link px-3 w-100 bg-warning text-dark">Edit</a>
+                                                <a href="{{ route('admin.promosi.edit', $promosi->id) }}" class="menu-link px-3 w-100 bg-warning text-dark">Edit</a>
+                                            </div>
+
+                                            <div class="menu-item px-3">
+                                                <button class="menu-link px-3 w-100 bg-info text-white" wire:click="showPhoto({{ $promosi->id }})">Lihat Gambar</button>
                                             </div>
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3 w-100 bg-danger text-white    " data-kt-ecommerce-product-filter="delete_row" wire:click="delete({{ $user->id }})">Delete</a>
+                                                <a href="#" class="menu-link px-3 w-100 bg-danger text-white" wire:click="delete({{ $promosi->id }})">Delete</a>
                                             </div>
                                         </div>
                                         <!--end::Menu item-->
                                     </td>
-                                    <td>
-                                        @if ($user->role === 'guest')
-                                        {{ $user->pelanggan->nama }}
-                                        @elseif ($user->role === 'admin')
-                                        {{ $user->admin->nama }}
-                                        @else
-                                        {{ $user->name }}
-                                        @endif
-                                    </td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>
-                                        <span class="badge badge-light-primary">
-                                            {{ $user->role === 'guest' ? 'Pelanggan' : ucfirst($user->role) }}
-                                        </span>
-                                    </td>
-
+                                    <td><img src="{{ Storage::url($promosi->gambar_promosi) }}" alt="Gambar promosi" style="max-width: 100px; max-height: 100px;"></td>
                                 </tr>
                                 @endforeach
                                 @endif
                         </tbody>
-
-
                     </table>
-                    <div class="mt-4 d-flex justify-content-center">
-                        {{ $data->onEachSide(1)->links() }}
-                    </div>
+                   @include('livewire.pages.admin.masterdata.promosi.modal')
                 </div>
 
             </div>
@@ -141,7 +109,7 @@
 <script>
     $(function() {
         Livewire.on('show-modal', () => {
-            var modalEl = document.getElementById('userModal');
+            var modalEl = document.getElementById('promosiModal');
             var existingModal = bootstrap.Modal.getInstance(modalEl);
             if (!existingModal) {
                 var myModal = new bootstrap.Modal(modalEl, {});
@@ -151,7 +119,7 @@
             }
         });
         Livewire.on('hide-modal', () => {
-            var modalEl = document.getElementById('userModal');
+            var modalEl = document.getElementById('promosiModal');
             var modal = bootstrap.Modal.getInstance(modalEl);
             if (modal) {
                 modal.hide();
@@ -175,7 +143,7 @@
                 icon: "warning"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Livewire.dispatch('deleteUser');
+                    Livewire.dispatch('deletePromosi');
                 } else {
                     Swal.fire("Cancelled", "Delete Cancelled.", "info");
                 }

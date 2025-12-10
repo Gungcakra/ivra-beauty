@@ -78,7 +78,7 @@
                         </thead>
                         <tbody>
                             @if (count($data) < 1) <tr>
-                                <td colspan="5" class="text-center">No Data Found</td>
+                                <td colspan="5" class="text-center">Tidak ada data</td>
                                 </tr>
                                 @else
 

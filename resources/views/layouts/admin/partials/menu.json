@@ -18,8 +18,16 @@
                 "url": "/admin/layanan"
             },
             {
+                "title": "Promosi",
+                "url": "/admin/promosi"
+            },
+            {
                 "title": "Reservasi",
                 "url": "/admin/reservasi"
+            },
+            {
+                "title": "Transaksi",
+                "url": "/admin/transaksi"
             }
         ]
     },
