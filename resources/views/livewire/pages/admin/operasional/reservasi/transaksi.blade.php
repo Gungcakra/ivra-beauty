@@ -50,60 +50,160 @@
         <!--begin::Content container-->
         <div id="kt_app_content_container" class="app-container container-xxl">
             <div class="card p-5">
-               
+                <div class="row">
+                    <!-- Left Column: Transaction Details -->
+                    <div class="col-lg-7">
+                        <h3 class="mb-4 fw-bold">Detail Transaksi</h3>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Nama Pelanggan</label>
+                            <p class="text-dark">{{ $nama }}</p>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Nomor Telepon</label>
+                            <p class="text-dark">{{ $no_telp }}</p>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Layanan</label>
+                            <p class="text-dark">{{ $nama_layanan }}</p>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Tanggal Reservasi</label>
+                            <p class="text-dark">{{ \Carbon\Carbon::parse($reservasi->tanggal)->translatedFormat('d F Y') }}</p>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Jam Reservasi</label>
+                            <p class="text-dark">{{ \Carbon\Carbon::parse($reservasi->waktu)->format('H:i') }}</p>
+                        </div>
+
+
+                    </div>
+
+                    <!-- Right Column: Price & Payment -->
+                    <div class="col-lg-5">
+                        <div class="card p-4">
+                            <h3 class="mb-4 fw-bold">Ringkasan Pembayaran</h3>
+
+                            <div class="mb-3 d-flex justify-content-between align-items-center">
+                                <span class="fw-semibold">Harga Layanan</span>
+                                <span class="fw-bold text-dark">Rp {{ number_format($reservasi->harga ?? 0, 0, ',', '.') }}</span>
+                            </div>
+
+                            <hr class="my-3" />
+
+                            <div class="mb-4 d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">Total Pembayaran</span>
+                                <span class="fw-bold fs-5 text-primary">Rp {{ number_format($reservasi->harga ?? 0, 0, ',', '.') }}</span>
+                            </div>
+
+                            <div class="m-0">
+                                <!--begin::Title-->
+                                <h3 class="fw-bold text-gray-800 mb-5">Metode Pembayaran</h3>
+                                <!--end::Title-->
+                                <!--begin::Radio group-->
+                                <div class="d-flex flex-equal gap-5 gap-xxl-9 px-0 mb-12" data-kt-buttons="true" data-kt-buttons-target="[data-kt-button]">
+                                    <!--begin::Radio-->
+                                    <label class="btn bg-light btn-color-gray-600 btn-active-text-gray-800 border border-3 border-gray-100 border-active-primary btn-active-light-primary w-100 px-4 {{ $metode_bayar === 'cash' ? 'active' : '' }}" data-kt-button="true">
+                                        <!--begin::Input-->
+                                        <input class="btn-check" type="radio" name="method" wire:click="setMetodeBayar('cash')" value="cash" wire:model="metode_bayar" />
+                                        <!--end::Input-->
+                                        <!--begin::Icon-->
+                                        <i class="ki-duotone ki-dollar fs-2hx mb-2 pe-0">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                            <span class="path3"></span>
+                                        </i>
+                                        <!--end::Icon-->
+                                        <!--begin::Title-->
+                                        <span class="fs-7 fw-bold d-block">Cash</span>
+                                        <!--end::Title-->
+                                    </label>
+                                    <!--end::Radio-->
+                                    <!--begin::Radio-->
+                                    <label class="btn bg-light btn-color-gray-600 btn-active-text-gray-800 border border-3 border-gray-100 border-active-primary btn-active-light-primary w-100 px-4 {{ $metode_bayar === 'transfer' ? 'active' : '' }}" data-kt-button="true">
+                                        <!--begin::Input-->
+                                        <input class="btn-check" type="radio" name="method" wire:click="setMetodeBayar('transfer')" value="transfer" wire:model="metode_bayar" />
+                                        <!--end::Input-->
+                                        <!--begin::Icon-->
+                                        <i class="ki-duotone ki-credit-cart fs-2hx mb-2 pe-0">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+                                        <!--end::Icon-->
+                                        <!--begin::Title-->
+                                        <span class="fs-7 fw-bold d-block">Transfer</span>
+                                        <!--end::Title-->
+                                    </label>
+                                    <!--end::Radio-->
+                                   
+                                </div>
+
+                                <button type="button" class="btn btn-primary w-100 fw-bold" wire:click="transaction">
+                                    <i class="ki-duotone ki-check fs-3">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    Simpan Transaksi
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
-
-
         </div>
     </div>
-</div>
-@push('scripts')
-<script>
-    $(function() {
-        Livewire.on('show-modal', () => {
-            var modalEl = document.getElementById('layananModal');
-            var existingModal = bootstrap.Modal.getInstance(modalEl);
-            if (!existingModal) {
-                var myModal = new bootstrap.Modal(modalEl, {});
-                myModal.show();
-            } else {
-                existingModal.show();
-            }
-        });
-        Livewire.on('hide-modal', () => {
-            var modalEl = document.getElementById('layananModal');
-            var modal = bootstrap.Modal.getInstance(modalEl);
-            if (modal) {
-                modal.hide();
-                modal.dispose();
-            }
-            document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
-            modalEl.style.display = 'none';
-            modalEl.setAttribute('aria-hidden', 'true');
-            modalEl.removeAttribute('aria-modal');
-            modalEl.removeAttribute('role');
-            document.body.classList.remove('modal-open');
-            document.body.style.overflow = '';
-            document.body.style.paddingRight = '';
-        });
-        Livewire.on('confirm-delete', (message) => {
-            Swal.fire({
-                title: message,
-                showCancelButton: true,
-                confirmButtonText: "Yes",
-                cancelButtonText: "No",
-                icon: "warning"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Livewire.dispatch('deleteLayanan');
+    @push('scripts')
+    <script>
+        $(function() {
+            Livewire.on('show-modal', () => {
+                var modalEl = document.getElementById('layananModal');
+                var existingModal = bootstrap.Modal.getInstance(modalEl);
+                if (!existingModal) {
+                    var myModal = new bootstrap.Modal(modalEl, {});
+                    myModal.show();
                 } else {
-                    Swal.fire("Cancelled", "Delete Cancelled.", "info");
+                    existingModal.show();
                 }
             });
+            Livewire.on('hide-modal', () => {
+                var modalEl = document.getElementById('layananModal');
+                var modal = bootstrap.Modal.getInstance(modalEl);
+                if (modal) {
+                    modal.hide();
+                    modal.dispose();
+                }
+                document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+                modalEl.style.display = 'none';
+                modalEl.setAttribute('aria-hidden', 'true');
+                modalEl.removeAttribute('aria-modal');
+                modalEl.removeAttribute('role');
+                document.body.classList.remove('modal-open');
+                document.body.style.overflow = '';
+                document.body.style.paddingRight = '';
+            });
+            Livewire.on('confirm-delete', (message) => {
+                Swal.fire({
+                    title: message,
+                    showCancelButton: true,
+                    confirmButtonText: "Yes",
+                    cancelButtonText: "No",
+                    icon: "warning"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Livewire.dispatch('deleteLayanan');
+                    } else {
+                        Swal.fire("Cancelled", "Delete Cancelled.", "info");
+                    }
+                });
+            });
+
+
         });
-
-
-    });
-</script>
-@endpush
+    </script>
+    @endpush

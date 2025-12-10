@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Admin\OperasionalReservasi;
+use App\Livewire\Admin\PromosiForm;
 use App\Livewire\Admin\UserForm;
 use App\Livewire\EmployeeManagement;
 use App\Livewire\Auth\Login;
@@ -8,6 +9,7 @@ use App\Livewire\Admin\Dashboard;
 use App\Livewire\Admin\Layanan;
 use App\Livewire\Admin\LayananForm;
 use App\Livewire\Admin\OperasionalReservasiTransaksi;
+use App\Livewire\Admin\Promosi;
 use App\Livewire\Admin\Reservasi as AdminReservasi;
 use App\Livewire\Guest\Login as LoginGuest;
 use App\Livewire\Guest\Register as RegisterGuest;
@@ -56,6 +58,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/layanan', Layanan::class)->name('admin.layanan');
     Route::get('/admin/layanan/create', LayananForm::class)->name('admin.layanan.create');
     Route::get('/admin/layanan/{layananSelect}/edit', LayananForm::class)->name('admin.layanan.edit');
+
+    // PROMOSI
+    Route::get('/admin/promosi', Promosi::class)->name('admin.promosi');
+    Route::get('/admin/promosi/create', PromosiForm::class)->name('admin.promosi.create');
+    Route::get('/admin/promosi/{promosiSelect}/edit', PromosiForm::class)->name('admin.promosi.edit');
 
     // RESERVASI
     Route::get('/admin/reservasi', AdminReservasi::class)->name('admin.reservasi');
