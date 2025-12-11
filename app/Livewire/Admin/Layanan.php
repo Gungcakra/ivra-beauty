@@ -33,7 +33,7 @@ class Layanan extends Component
             $layanan = ModelsLayanan::find($this->idToDelete);
             if ($layanan) {
                 $layanan->delete();
-                $this->dispatch('delete-success', params: 'Layanan berhasil dihapus.');
+                $this->dispatch('delete-success',  'Layanan berhasil dihapus.');
             } else {
                 $this->dispatch('error-alert', 'Layanan tak ditemukan.');
             }

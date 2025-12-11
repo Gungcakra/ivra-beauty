@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('id_reservasi')->constrained('reservasis')->onDelete('cascade');
             $table->foreignId('id_user')->constrained('pelanggans')->onDelete('cascade');
             $table->decimal('nominal_pembayaran', 10, 2);
+            $table->string('metode_bayar');
             $table->date('tanggal_transaksi');
             $table->timestamps();
         });

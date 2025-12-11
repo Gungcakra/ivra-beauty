@@ -10,7 +10,7 @@ class Transaksi extends Model
 
     public function reservasi()
     {
-        return $this->belongsTo(Reservasi::class);
+        return $this->belongsTo(Reservasi::class, 'id_reservasi');
     }
 
     public function pelanggan()

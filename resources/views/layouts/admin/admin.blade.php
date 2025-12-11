@@ -125,7 +125,12 @@
             });
 
             Livewire.on('delete-success', (message) => {
-                Swal.fire("Deleted!", message, "success");
+                Swal.fire({
+                    title: "Berhasil!",
+                    text: message,
+                    icon: "success",
+                    confirmButtonText: "OK",
+                });
             });
 
             Livewire.on('error', (message) => {

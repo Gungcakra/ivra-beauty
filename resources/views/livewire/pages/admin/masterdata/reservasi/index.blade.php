@@ -63,7 +63,6 @@
                             placeholder="Cari Reservasi"
                             wire:model.live.debounce.100ms="search" />
                     </div>
-                    <button class="btn btn-success btn-sm"> <i class="bi bi-file-earmark-excel-fill"></i> Export Laporan</button>
                 </div>
                 <div class="table-responsive">
                     <table id="kt_datatable_zero_configuration" class="table table-row-bordered gy-5">
@@ -140,14 +139,14 @@
             Swal.fire({
                 title: message,
                 showCancelButton: true,
-                confirmButtonText: "Yes",
-                cancelButtonText: "No",
+                cancelButtonText: "Iya",
+                cancelButtonText: "Tidak",
                 icon: "warning"
             }).then((result) => {
                 if (result.isConfirmed) {
                     Livewire.dispatch('deleteLayanan');
                 } else {
-                    Swal.fire("Cancelled", "Delete Cancelled.", "info");
+                    Swal.fire("DiBatalkan", "Batal Menghapus.", "info");
                 }
             });
         });
