@@ -1,4 +1,4 @@
-<x-slot:title>Ivra Beauty - Dashboard</x-slot:title>
+<x-slot:title>Ivira Beauty - Dashboard</x-slot:title>
 
 <div class="flex container flex-col">
     <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">

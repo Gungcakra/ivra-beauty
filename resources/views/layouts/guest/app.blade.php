@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Ivra Beauty - Hair, Spa, Nail, Beauty Salons and Cosmetics Multipurpose HTML Template" />
-    <title>Ivra Beauty</title>
+    <meta name="description" content="Ivira Beauty - Hair, Spa, Nail, Beauty Salons and Cosmetics Multipurpose HTML Template" />
+    <title>Ivira Beauty</title>
     <link rel="shortcut icon" href="{{  asset('guest/assets/images/favicon.ico') }}" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />

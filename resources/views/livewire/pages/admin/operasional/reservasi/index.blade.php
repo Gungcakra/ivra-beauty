@@ -1,5 +1,5 @@
 <div class="d-flex flex-column flex-column-fluid">
-    <x-slot:title>Ivra Beauty</x-slot:title>
+    <x-slot:title>Ivira Beauty</x-slot:title>
     <!--begin::Toolbar-->
     <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
         <!--begin::Toolbar container-->
@@ -122,7 +122,7 @@
     iframe.onload = () => {
         setTimeout(() => {
             iframe.contentWindow.focus();
-            iframe.contentWindow.document.title = 'Invoice - Ivra Beauty';
+            iframe.contentWindow.document.title = 'Invoice - Ivira Beauty';
             iframe.contentWindow.print();
             setTimeout(() => {
                 document.body.removeChild(iframe);

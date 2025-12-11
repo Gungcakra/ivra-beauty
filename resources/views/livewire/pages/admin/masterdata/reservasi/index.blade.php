@@ -1,5 +1,5 @@
 <div class="d-flex flex-column flex-column-fluid">
-    <x-slot:title>Ivra Beauty - Masterdata Reservasi</x-slot:title>
+    <x-slot:title>Ivira Beauty - Masterdata Reservasi</x-slot:title>
     <!--begin::Toolbar-->
     <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
         <!--begin::Toolbar container-->

@@ -34,7 +34,7 @@
                   <button type="submit" class="btn btn-primary w-100 rounded-0 py-2 fw-medium text-bg1 mt-2 mt-xl-3">Sign In</button>
                 </div>
               </div>
-              <p class="copyright pt-xl-5">Copyright © <a href="{{route('landing')}}" class="text-secondary3 fw-semibold">Ivra Beauty</a> All rights reserved.</p>
+              <p class="copyright pt-xl-5">Copyright © <a href="{{route('landing')}}" class="text-secondary3 fw-semibold">Ivira Beauty</a> All rights reserved.</p>
             </form>
           </div>
         </div>

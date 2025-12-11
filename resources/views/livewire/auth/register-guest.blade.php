@@ -43,7 +43,7 @@
                  <button type="submit" class="btn btn-primary w-100 rounded-0 py-2 fw-medium text-bg1 mt-2 mt-xl-3">Registrasi</button>
                </div>
              </div>
-             <p class="copyright">Copyright © <a href="index.html" class="text-secondary3 fw-semibold">Ivra Beauty</a> All rights reserved.</p>
+             <p class="copyright">Copyright © <a href="index.html" class="text-secondary3 fw-semibold">Ivira Beauty</a> All rights reserved.</p>
          </form>
 
        </div>
