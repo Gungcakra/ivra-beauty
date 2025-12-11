@@ -53,7 +53,7 @@
                                 </div>
                             </div>
                             <div class="row g-3 g-lg-0 bottom">
-                                <div class="col-6 col-xl-2 fade_up_anim">
+                                <!-- <div class="col-6 col-xl-2 fade_up_anim">
                                     <h4 class="mb-4 text-n500 text-uppercase">Quick Link</h4>
                                     <ul class="navigation-links">
                                         <li>
@@ -92,7 +92,7 @@
                                             <a href="payment.html"> Payment</a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> -->
                                 <div class="col-sm-6 col-xl-3 fade_up_anim" data-delay=".2">
                                     <div class="flex-grow-1">
                                         <h4 class="pb-3 text-n500 text-uppercase">Contact</h4>
