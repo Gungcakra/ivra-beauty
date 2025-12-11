@@ -71,7 +71,7 @@
 
         <div class="header">
             <div>
-                <h1>IVRA BEAUTY</h1>
+                <h1>Ivira Beauty</h1>
             </div>
             <div class="header-right">
                 <div class="invoice-number"><strong>Invoice #:</strong> {{ $transaksi->created_at->addHours(8)->format('YmdHis') }}</div>
@@ -81,7 +81,7 @@
         </div>
 
         <div class="body">
-            <h2>Terima kasih telah melakukan reservasi di IVRA BEAUTY!</h2>
+            <h2>Terima kasih telah melakukan reservasi di Ivira Beauty!</h2>
             <p>Berikut adalah rincian reservasi Anda:</p>
             <ul>
                 <li><strong>Nama Pelanggan:</strong> {{$transaksi->pelanggan?->nama}}</li>
@@ -116,7 +116,7 @@
                     </div>
                 </div>
             </div>
-            <p>Silakan simpan invoice ini sebagai bukti reservasi Anda. Kami menantikan kehadiran Anda di IVRA BEAUTY!</p>
+            <p>Silakan simpan invoice ini sebagai bukti reservasi Anda. Kami menantikan kehadiran Anda di Ivira Beauty!</p>
         </div>
     </div>
 </body>
