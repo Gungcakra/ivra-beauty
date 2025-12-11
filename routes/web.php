@@ -18,18 +18,15 @@ use App\Livewire\Admin\User;
 use App\Livewire\Guest\Profile;
 use App\Livewire\Guest\Reservasi;
 use App\Livewire\Guest\RiwayatReservasi;
+use App\Models\Transaksi;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Landing::class)->name('landing');
 
 // AUTHENTICATION ROUTES FOR GUEST
 Route::middleware(['guest'])->group(function () {
-    Route::get('/guest/login',LoginGuest::class)->name('guest.login');
+    Route::get('/guest/login', LoginGuest::class)->name('guest.login');
     Route::get('/guest/register', RegisterGuest::class)->name('guest.register');
-
-  
-
-
 });
 Route::middleware(['auth', 'role:guest'])->group(function () {
     // RESERVATION ROUTE
@@ -39,6 +36,13 @@ Route::middleware(['auth', 'role:guest'])->group(function () {
     Route::get('/guest/logout', [LoginGuest::class, 'logout'])->name('guest.logout');
 });
 
+Route::get('/print-invoice/{id}', function ($id) {
+    $transaksi = Transaksi::find($id);
+    if (!$transaksi) {
+        abort(404, 'Transaksi tidak ditemukan');
+    }
+    return view('livewire.pages.admin.operasional.reservasi.invoice', ['transaksi' => $transaksi]);
+})->name('invoice');
 
 // AUTHENTICATION ROUTES FOR ADMIN
 Route::get('/admin/login', Login::class)->name('admin.login');
@@ -51,8 +55,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     // USER
     Route::get('/admin/user', User::class)->name('admin.user');
-    Route::get('/admin/user/create',UserForm::class)->name('admin.user.create');
-    Route::get('/admin/user/{userSelect}/edit/',UserForm::class)->name('admin.user.edit');
+    Route::get('/admin/user/create', UserForm::class)->name('admin.user.create');
+    Route::get('/admin/user/{userSelect}/edit/', UserForm::class)->name('admin.user.edit');
 
     // LAYANAN
     Route::get('/admin/layanan', Layanan::class)->name('admin.layanan');
@@ -70,8 +74,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     // OPERASIONAL ROUTES
     Route::get('/admin/operasional/reservasi', OperasionalReservasi::class)->name('admin.operasional.reservasi');
     Route::get('/admin/operasional/reservasi/{reservasi}/transaksi', OperasionalReservasiTransaksi::class)->name('admin.operasional.reservasi.transaksi');
-
-    
 });
 Route::fallback(function () {
     return response()->view('errors.404', [], 404);

@@ -10,6 +10,7 @@ use Livewire\Component;
 #[Layout('layouts.admin.admin')]
 class OperasionalReservasiTransaksi extends Component
 {
+    protected $listeners = ['transaction'];
     public $reservasi, $nama, $email, $no_telp, $nama_layanan, $harga_layanan, $metode_bayar;
 
     public function mount($reservasi)
@@ -29,20 +30,32 @@ class OperasionalReservasiTransaksi extends Component
         $this->metode_bayar = $method;
     }
 
+    public function confirmTransaction()
+    {
+        try {
+            $this->validate([
+                'metode_bayar' => 'required',
+            ]);
+            $this->dispatch('confirm-transaction', 'Apakah Anda yakin ingin menyimpan transaksi ini?');
+        } catch (\Exception $e) {
+            $this->dispatch('alert-error', $e->getMessage());
+            return;
+        }
+    }
     public function transaction()
     {
         try {
             $this->validate([
                 'metode_bayar' => 'required',
             ]);
-            Transaksi::create([
+            $transaksi = Transaksi::create([
                 'id_user' => $this->reservasi->id_user,
                 'id_reservasi' => $this->reservasi->id,
                 'metode_bayar' => $this->metode_bayar,
                 'nominal_pembayaran' => $this->reservasi->harga,
                 'tanggal_transaksi' => now(),
             ]);
-            return redirect()->route('admin.operasional.reservasi')->with('success-alert', 'Transaksi berhasil disimpan.');
+            return redirect()->route('admin.operasional.reservasi')->with('print-invoice', $transaksi->id);
         } catch (\Exception $e) {
             $this->dispatch('alert-error', $e->getMessage());
         }

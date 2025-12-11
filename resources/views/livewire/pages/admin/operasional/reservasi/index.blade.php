@@ -1,5 +1,5 @@
 <div class="d-flex flex-column flex-column-fluid">
-    <x-slot:title>Ivra Beauty - Reservasi Hari Ini</x-slot:title>
+    <x-slot:title>Ivra Beauty</x-slot:title>
     <!--begin::Toolbar-->
     <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
         <!--begin::Toolbar container-->
@@ -80,7 +80,7 @@
                         </thead>
                         <tbody>
                             @if (count($data) < 1) <tr>
-                                <td colspan="6" class="text-center align-middle">Tidak ada data</td>
+                                <td colspan="8" class="text-center align-middle">Tidak ada reservasi hari ini</td>
                                 </tr>
                                 @else
 
@@ -111,6 +111,26 @@
     </div>
 </div>
 @push('scripts')
+
+@if(session()->has('print-invoice'))
+<script>
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.src = `/print-invoice/{{ session('print-invoice') }}`;
+    document.body.appendChild(iframe);
+    
+    iframe.onload = () => {
+        setTimeout(() => {
+            iframe.contentWindow.focus();
+            iframe.contentWindow.document.title = 'Invoice - Ivra Beauty';
+            iframe.contentWindow.print();
+            setTimeout(() => {
+                document.body.removeChild(iframe);
+            }, 1000);
+        }, 500);
+    };
+</script>
+@endif
 <script>
     $(function() {
         Livewire.on('show-modal', () => {

@@ -139,10 +139,10 @@
                                         <!--end::Title-->
                                     </label>
                                     <!--end::Radio-->
-                                   
+
                                 </div>
 
-                                <button type="button" class="btn btn-primary w-100 fw-bold" wire:click="transaction">
+                                <button type="button" class="btn btn-primary w-100 fw-bold" wire:click="confirmTransaction">
                                     <i class="ki-duotone ki-check fs-3">
                                         <span class="path1"></span>
                                         <span class="path2"></span>
@@ -203,6 +203,23 @@
                 });
             });
 
+            Livewire.on('confirm-transaction', (message) => {
+                Swal.fire({
+                    title: message,
+                    showCancelButton: true,
+                    confirmButtonText: "Yes",
+                    cancelButtonText: "No",
+                    icon: "warning"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Livewire.dispatch('transaction');
+                    } else {
+                        Swal.fire("Cancelled", "Transaksi Dibatalkan.", "info");
+                    }
+                });
+            });
+
+           
 
         });
     </script>
