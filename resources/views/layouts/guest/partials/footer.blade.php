@@ -7,7 +7,7 @@
                             <a href="index.html" aria-label="Go to Home">
                                 <img src="{{  asset('guest/assets/images/logo-black.png')}}" class="img-fluid mb-4" alt="" />
                             </a>
-                            <p class="mb-4 pb-lg-3 text-n500">Welcome to Salonix, where legal expertise meets personalized service. We are a team of highly skilled attorneys dedicated to providing</p>
+                            <p class="mb-4 pb-lg-3 text-n500">Welcome to Ivira Beauty, where legal expertise meets personalized service. We are a team of highly skilled attorneys dedicated to providing</p>
                             <ul class="social-link two">
                                 <li>
                                     <a aria-label="social link" href="#"><i class="ph ph-facebook-logo"></i></a>
@@ -146,7 +146,7 @@
                     </div>
                 </div>
                 <div class="copyright-two d-flex flex-wrap gap-3 align-items-center justify-content-between px-3">
-                    <p>Copyright © <a href="index.html" class="text-secondary fw-semibold">Salonix</a> <span id="year"></span>. All rights reserved.</p>
+                    <p>Copyright © <a href="index.html" class="text-secondary fw-semibold">Ivira Beauty</a> <span id="year"></span>. All rights reserved.</p>
                     <ul class="list-unstyled d-flex flex-wrap align-items-center mb-0 ps-0 gap-2">
                         <li><a href="#">Privacy Policy</a></li>
                         <li class="text-sm d-none d-sm-block">•</li>

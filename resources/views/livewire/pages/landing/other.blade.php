@@ -9,7 +9,7 @@
                 <div class="col-lg-10 col-xl-9 position-relative">
                     <div class="reveal reveal--right">
                         <div class="whychoose-card">
-                            <span class="sub-heading fade_up_anim">Why Choose Salonix?</span>
+                            <span class="sub-heading fade_up_anim">Why Choose Ivira Beauty?</span>
                             <h2 class="pb-1 fade_up_anim text-uppercase">Building Trust, One Strand at a Time</h2>
                             <p class="mb-4 fade_up_anim" data-delay=".3">We believe your hair deserves nothing but the best. That’s why we offer an unparalleled salon experience, combining expert stylists, premium products, and a personalized approach.</p>
                             <ul class="why-list fade_up_anim" data-delay=".6">
