@@ -12,7 +12,7 @@
                          <li><a href="{{ route('landing') }}" class="text-white">Beranda</a></li>
 
                          <i class="ph ph-caret-right text-white"></i>
-                         <li><a href="#">Riwayat Reservasi</a></li>
+                         <li><a href="#" class="text-primary">Riwayat Reservasi</a></li>
                      </ul>
                  </div>
              </div>
