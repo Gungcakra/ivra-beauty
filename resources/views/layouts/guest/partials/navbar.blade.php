@@ -3,7 +3,7 @@
     <div class="container g-0 g-lg-1">
         <nav id="navbar-menu-mobile" class="px-2 px-lg-0">
             <div class="d-flex justify-content-between align-items-center w-100">
-                <a href="index.html" aria-label="Go to Homepage">
+                <a href="{{route('landing')}}" aria-label="Go to Homepage">
                     <img src="{{  asset('guest/assets/images/logo.png') }}" alt="" />
                 </a>
                 <i class="ph ph-x text-white fs-2 close-menu"></i>
@@ -41,7 +41,7 @@
 <header id="header" class="header w-100">
     <div class="g-0 g-lg-1">
         <nav id="navbar-menu" class="d-flex justify-content-between align-items-center position-relative nav-menu-area">
-            <a href="index.html" aria-label="Go to Homepage">
+            <a href="{{route('landing')}}" aria-label="Go to Homepage">
                 <img src="{{  asset('guest/assets/images/logo.png') }}" alt="" />
             </a>
 
@@ -111,9 +111,9 @@
                 @else
                 <a href="{{ route('guest.login') }}" class="primary-btn d-none d-lg-block playFairFont">Sign In </a>
                 @endif
-                <button aria-label="open sidebar" class="show-offcanvas bg-transparent border-0 text-white d-none d-xl-block fs-3">
+                <!-- <button aria-label="open sidebar" class="show-offcanvas bg-transparent border-0 text-white d-none d-xl-block fs-3">
                     <i class="ph ph-squares-four"></i>
-                </button>
+                </button> -->
                 <button class="toggle-menu"><i class="ph ph-list"></i></button>
             </div>
         </nav>
