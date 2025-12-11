@@ -148,7 +148,6 @@
                 KTMenu.createInstances();
             });
         });
-        y
     </script>
     <script>
         var hostUrl = "{{ asset('assets/')}}";
@@ -159,7 +158,6 @@
     <script data-navigate-once src="{{ asset('assets/js/custom/widgets.js') }}"></script>
 
     @stack('scripts')
-    @stack('script')
     {{-- <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/laravel-echo@2.0.2/dist/echo.iife.min.js"></script>
     <script>

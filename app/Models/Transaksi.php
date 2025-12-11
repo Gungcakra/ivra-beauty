@@ -12,4 +12,9 @@ class Transaksi extends Model
     {
         return $this->belongsTo(Reservasi::class);
     }
+
+    public function pelanggan()
+    {
+        return $this->belongsTo(Pelanggan::class, 'id_user');
+    }
 }
