@@ -10,6 +10,7 @@ use App\Livewire\Admin\Layanan;
 use App\Livewire\Admin\LayananForm;
 use App\Livewire\Admin\OperasionalReservasiTransaksi;
 use App\Livewire\Admin\Promosi;
+use \App\Livewire\Admin\Transaksi as AdminTransaksi;
 use App\Livewire\Admin\Reservasi as AdminReservasi;
 use App\Livewire\Guest\Login as LoginGuest;
 use App\Livewire\Guest\Register as RegisterGuest;
@@ -17,6 +18,7 @@ use App\Livewire\Landing;
 use App\Livewire\Admin\User;
 use App\Livewire\Guest\Profile;
 use App\Livewire\Guest\Reservasi;
+
 use App\Livewire\Guest\RiwayatReservasi;
 use App\Models\Transaksi;
 use Illuminate\Support\Facades\Route;
@@ -70,6 +72,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     // RESERVASI
     Route::get('/admin/reservasi', AdminReservasi::class)->name('admin.reservasi');
+
+    // TRANSAKSI
+    Route::get('/admin/transaksi', AdminTransaksi::class)->name('admin.transaksi');
 
     // OPERASIONAL ROUTES
     Route::get('/admin/operasional/reservasi', OperasionalReservasi::class)->name('admin.operasional.reservasi');

@@ -85,7 +85,7 @@
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3 w-100 bg-danger text-white" wire:click="delete({{ $promosi->id }})">Delete</a>
+                                                <a href="#" class="menu-link px-3 w-100 bg-danger text-white" wire:click="delete({{ $promosi->id }})">Hapus</a>
                                             </div>
                                         </div>
                                         <!--end::Menu item-->
@@ -138,14 +138,14 @@
             Swal.fire({
                 title: message,
                 showCancelButton: true,
-                confirmButtonText: "Yes",
-                cancelButtonText: "No",
+                cancelButtonText: "Iya",
+                cancelButtonText: "Tidak",
                 icon: "warning"
             }).then((result) => {
                 if (result.isConfirmed) {
                     Livewire.dispatch('deletePromosi');
                 } else {
-                    Swal.fire("Cancelled", "Delete Cancelled.", "info");
+                    Swal.fire("DiBatalkan", "Batal Menghapus.", "info");
                 }
             });
         });
