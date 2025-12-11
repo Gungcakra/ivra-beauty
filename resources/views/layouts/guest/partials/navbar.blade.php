@@ -4,7 +4,9 @@
         <nav id="navbar-menu-mobile" class="px-2 px-lg-0">
             <div class="d-flex justify-content-between align-items-center w-100">
                 <a href="{{route('landing')}}" aria-label="Go to Homepage">
-                    <img src="{{  asset('guest/assets/images/logo.png') }}" alt="" />
+                    <!-- <img src="{{  asset('guest/assets/images/logo.png') }}" alt="" /> -->
+                    <h3 class="text-white fw-bold fst-italic">IVIRA BEAUTY</h3>
+
                 </a>
                 <i class="ph ph-x text-white fs-2 close-menu"></i>
             </div>
@@ -42,7 +44,8 @@
     <div class="g-0 g-lg-1">
         <nav id="navbar-menu" class="d-flex justify-content-between align-items-center position-relative nav-menu-area">
             <a href="{{route('landing')}}" aria-label="Go to Homepage">
-                <img src="{{  asset('guest/assets/images/logo.png') }}" alt="" />
+                <!-- <img src="{{  asset('guest/assets/images/logo.png') }}" alt="" /> -->
+                <h3 class="text-white fw-bold fst-italic">IVIRA BEAUTY</h3>
             </a>
 
             <!-- <div id="brand">COMPANY</div> -->
