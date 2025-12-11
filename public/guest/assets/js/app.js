@@ -1,9 +1,9 @@
 /* ============== 
  ================= JS DOCUMENTATION ==================
 
- * template name: Salonix
+ * template name: Ivira Beauty
  * version: 1.0
- * description: Salonix - Hair, Spa, Nail, Beauty Salons and Cosmetics Multipurpose HTML Template
+ * description: Ivira Beauty - Hair, Spa, Nail, Beauty Salons and Cosmetics Multipurpose HTML Template
  * author: pixelaxis
  * author-url: https://themeforest.net/user/pixelaxis
 

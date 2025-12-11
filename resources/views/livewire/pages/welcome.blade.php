@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Salonix - Hair, Spa, Nail, Beauty Salons and Cosmetics Multipurpose HTML Template" />
-    <title>Salonix - Hair, Spa, Nail, Beauty Salons and Cosmetics Multipurpose HTML Template</title>
+    <meta name="description" content="Ivira Beauty - Hair, Spa, Nail, Beauty Salons and Cosmetics Multipurpose HTML Template" />
+    <title>Ivira Beauty - Hair, Spa, Nail, Beauty Salons and Cosmetics Multipurpose HTML Template</title>
     <link rel="shortcut icon" href="{{  asset('guest/assets/images/favicon.ico') }}" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
@@ -137,7 +137,7 @@
                 </div>
                 <div class="col-lg-5">
                     <p class="fade_up_anim" data-delay=".3">We’re dedicated to transforming your hair into a masterpiece. Our expert stylists offer a wide range of services tailored.</p>
-                    <p class="fade_up_anim second" data-delay=".3">Whether you're looking for a quick touch-up or a complete makeover, Salonix is here to deliver an experience.</p>
+                    <p class="fade_up_anim second" data-delay=".3">Whether you're looking for a quick touch-up or a complete makeover, Ivira Beauty is here to deliver an experience.</p>
                 </div>
             </div>
             <div class="service-card-area row">
@@ -248,7 +248,7 @@
                 <div class="col-lg-10 col-xl-9 position-relative">
                     <div class="reveal reveal--right">
                         <div class="whychoose-card">
-                            <span class="sub-heading fade_up_anim">Why Choose Salonix?</span>
+                            <span class="sub-heading fade_up_anim">Why Choose Ivira Beauty?</span>
                             <h2 class="pb-1 fade_up_anim text-uppercase">Building Trust, One Strand at a Time</h2>
                             <p class="mb-4 fade_up_anim" data-delay=".3">We believe your hair deserves nothing but the best. That’s why we offer an unparalleled salon experience, combining expert stylists, premium products, and a personalized approach.</p>
                             <ul class="why-list fade_up_anim" data-delay=".6">
@@ -702,7 +702,7 @@
                                                         d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.4,16.4,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65A8,8,0,0,0,128,181.1V32c.24,0,.27.08.35.26L153,91.86a8,8,0,0,0,6.75,4.92l63.91,5.16c.16,0,.25,0,.34.29S224,102.63,223.84,102.73Z" />
                                                 </svg>
                                             </div>
-                                            <p class="mt-3 pb-2 mb-3 mb-lg-4">I had the privilege of working with Salonix from Salonix on a complex business litigation case. Their professionalism, attention to detail, and strategic approach.</p>
+                                            <p class="mt-3 pb-2 mb-3 mb-lg-4">I had the privilege of working with Ivira Beauty from Ivira Beauty on a complex business litigation case. Their professionalism, attention to detail, and strategic approach.</p>
                                             <div class="d-flex gap-3 align-items-center">
                                                 <img width="60" height="60" src="{{  asset('guest/assets/images/client-1.png')}}" alt="" />
                                                 <div>
@@ -747,7 +747,7 @@
                                                         d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.4,16.4,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65A8,8,0,0,0,128,181.1V32c.24,0,.27.08.35.26L153,91.86a8,8,0,0,0,6.75,4.92l63.91,5.16c.16,0,.25,0,.34.29S224,102.63,223.84,102.73Z" />
                                                 </svg>
                                             </div>
-                                            <p class="mt-3 pb-2 mb-3 mb-lg-4">I had the privilege of working with Salonix from Salonix on a complex business litigation case. Their professionalism, attention to detail, and strategic approach.</p>
+                                            <p class="mt-3 pb-2 mb-3 mb-lg-4">I had the privilege of working with Ivira Beauty from Ivira Beauty on a complex business litigation case. Their professionalism, attention to detail, and strategic approach.</p>
                                             <div class="d-flex gap-3 align-items-center">
                                                 <img width="60" height="60" src="{{  asset('guest/assets/images/client-1.png')}}" alt="" />
                                                 <div>
@@ -792,7 +792,7 @@
                                                         d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.4,16.4,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65A8,8,0,0,0,128,181.1V32c.24,0,.27.08.35.26L153,91.86a8,8,0,0,0,6.75,4.92l63.91,5.16c.16,0,.25,0,.34.29S224,102.63,223.84,102.73Z" />
                                                 </svg>
                                             </div>
-                                            <p class="mt-3 pb-2 mb-3 mb-lg-4">I had the privilege of working with Salonix from Salonix on a complex business litigation case. Their professionalism, attention to detail, and strategic approach.</p>
+                                            <p class="mt-3 pb-2 mb-3 mb-lg-4">I had the privilege of working with Ivira Beauty from Ivira Beauty on a complex business litigation case. Their professionalism, attention to detail, and strategic approach.</p>
                                             <div class="d-flex gap-3 align-items-center">
                                                 <img width="60" height="60" src="{{  asset('guest/assets/images/client-1.png')}}" alt="" />
                                                 <div>
@@ -837,7 +837,7 @@
                                                         d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.4,16.4,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65A8,8,0,0,0,128,181.1V32c.24,0,.27.08.35.26L153,91.86a8,8,0,0,0,6.75,4.92l63.91,5.16c.16,0,.25,0,.34.29S224,102.63,223.84,102.73Z" />
                                                 </svg>
                                             </div>
-                                            <p class="mt-3 pb-2 mb-3 mb-lg-4">I had the privilege of working with Salonix from Salonix on a complex business litigation case. Their professionalism, attention to detail, and strategic approach.</p>
+                                            <p class="mt-3 pb-2 mb-3 mb-lg-4">I had the privilege of working with Ivira Beauty from Ivira Beauty on a complex business litigation case. Their professionalism, attention to detail, and strategic approach.</p>
                                             <div class="d-flex gap-3 align-items-center">
                                                 <img width="60" height="60" src="{{  asset('guest/assets/images/client-1.png')}}" alt="" />
                                                 <div>
@@ -1051,7 +1051,7 @@
                             <a href="index.html" aria-label="Go to Home">
                                 <img src="{{  asset('guest/assets/images/logo-black.png')}}" class="img-fluid mb-4" alt="" />
                             </a>
-                            <p class="mb-4 pb-lg-3 text-n500">Welcome to Salonix, where legal expertise meets personalized service. We are a team of highly skilled attorneys dedicated to providing</p>
+                            <p class="mb-4 pb-lg-3 text-n500">Welcome to Ivira Beauty, where legal expertise meets personalized service. We are a team of highly skilled attorneys dedicated to providing</p>
                             <ul class="social-link two">
                                 <li>
                                     <a aria-label="social link" href="#"><i class="ph ph-facebook-logo"></i></a>
@@ -1190,7 +1190,7 @@
                     </div>
                 </div>
                 <div class="copyright-two d-flex flex-wrap gap-3 align-items-center justify-content-between px-3">
-                    <p>Copyright © <a href="index.html" class="text-secondary fw-semibold">Salonix</a> <span id="year"></span>. All rights reserved.</p>
+                    <p>Copyright © <a href="index.html" class="text-secondary fw-semibold">Ivira Beauty</a> <span id="year"></span>. All rights reserved.</p>
                     <ul class="list-unstyled d-flex flex-wrap align-items-center mb-0 ps-0 gap-2">
                         <li><a href="#">Privacy Policy</a></li>
                         <li class="text-sm d-none d-sm-block">•</li>
