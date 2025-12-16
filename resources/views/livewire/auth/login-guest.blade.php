@@ -5,7 +5,7 @@
             <form class="col-lg-6 col-xxl-5" wire:submit.prevent="login">
               <div class="pb-120">
                 <a href="{{route('landing')}}" class="py-2 py-xl-3 d-flex">
-                  <img src="assets/images/logo-black.png" class="img-fluid" alt="" />
+                  <!-- <img src="assets/images/logo-black.png" class="img-fluid" alt="" /> -->
                 </a>
               </div>
               <div class="mb-4 mb-xl-5 pb-xxl-2">
