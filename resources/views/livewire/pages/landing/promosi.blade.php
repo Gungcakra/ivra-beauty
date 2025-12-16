@@ -15,9 +15,7 @@
                     <span class="sub-heading fade_up_anim">Promosi Dari Kami</span>
                     <!-- <h2 class="mb-3 fade_up_anim text-white text-uppercase">Talented, Experienced, Trusted</h2> -->
                 </div>
-                <div class="col-lg-4 offset-lg-2">
-                    <p class="fade_up_anim text-white" data-delay=".3">We take pride in our team of talented, passionate, and experienced professionals.</p>
-                </div>
+              
             </div>
             <div class="swiper expertSwiper">
                 <div class="swiper-wrapper">

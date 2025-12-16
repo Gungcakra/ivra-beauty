@@ -9,7 +9,7 @@
                             <h3 class="text-primary fw-bold fst-italic">IVIRA BEAUTY</h3>
 
                         </a>
-                        <p class="mb-4 pb-lg-3 text-n500">Welcome to Ivira Beauty, where legal expertise meets personalized service. We are a team of highly skilled attorneys dedicated to providing</p>
+                        <p class="mb-4 pb-lg-3 text-n500">Selamat datang di Ivira Beauty, tempat kecantikan bertemu dengan layanan terbaik. Kami berkomitmen memberikan perawatan berkualitas tinggi untuk Anda.</p>
                         <ul class="social-link two">
                             <li>
                                 <a aria-label="social link" href="#"><i class="ph ph-facebook-logo"></i></a>
@@ -33,21 +33,21 @@
                                 <div class="col-lg-4">
                                     <div class="d-flex flex-lg-column pt-3 justify-content-lg-center align-items-center gap-2 align-items-lg-start h-100 opening-hour">
                                         <img src="{{  asset('guest/assets/images/clock-icon.png')}}" class="img-fluid" alt="" />
-                                        <h2 class="text-uppercase pt-3">Opening Hour</h2>
+                                        <h2 class="text-uppercase pt-3">Jam Buka</h2>
                                     </div>
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="row h-100">
                                         <div class="col-lg-6 d-flex justify-content-lg-center border-left-right">
                                             <div class="ps-2 ps-lg-0">
-                                                <p>Saturday to Thursday</p>
-                                                <p class="time">09:30 AM - 20:30 PM</p>
+                                                <p>Senin - Kamis</p>
+                                                <p class="time">10:00 AM - 18:00 PM</p>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 d-flex align-items-center justify-content-lg-center pb-4 pb-lg-0">
                                             <div class="">
-                                                <p>Friday</p>
-                                                <p class="time">02:30 AM - 19:00 PM</p>
+                                                <p>Sabtu - Minggu</p>
+                                                <p class="time">10:00 AM - 18:00 PM</p>
                                             </div>
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@
                                 </div> -->
                             <div class="col-sm-6 col-xl-3 fade_up_anim" data-delay=".2">
                                 <div class="flex-grow-1">
-                                    <h4 class="pb-3 text-n500 text-uppercase">Contact</h4>
+                                    <h4 class="pb-3 text-n500 text-uppercase">Kontak Kami</h4>
                                     <ul class="contact-two mb-0">
                                         <li class="contact-item">
                                             <div class="contact-icon">
@@ -129,31 +129,18 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-xl-5 fade_up_anim" data-delay=".4">
-                                <div class="">
-                                    <h4 class="mb-4 text-n500 text-uppercase">newsletter</h4>
-                                </div>
-                                <p>Subscribe to our newsletter for the latest updates</p>
-                                <div class="">
-                                    <div class="d-flex justify-content-end pt-4">
-                                        <form class="two">
-                                            <input type="email" class="ps-2" placeholder="Your Email..." required />
-                                            <button aria-label="subscribe button"><i class="ph ph-paper-plane-right"></i></button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
             </div>
             <div class="copyright-two d-flex flex-wrap gap-3 align-items-center justify-content-between px-3">
                 <p>Copyright © <a href="index.html" class="text-secondary fw-semibold">Ivira Beauty</a> <span id="year"></span>. All rights reserved.</p>
-                <ul class="list-unstyled d-flex flex-wrap align-items-center mb-0 ps-0 gap-2">
+                <!-- <ul class="list-unstyled d-flex flex-wrap align-items-center mb-0 ps-0 gap-2">
                     <li><a href="#">Privacy Policy</a></li>
                     <li class="text-sm d-none d-sm-block">•</li>
                     <li><a href="#">Terms of Service</a></li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </div>
