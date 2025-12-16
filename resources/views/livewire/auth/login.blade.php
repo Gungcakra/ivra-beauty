@@ -62,10 +62,10 @@
     <!--begin::Aside-->
     <div class="d-flex flex-lg-row-fluid w-lg-50 bgi-size-cover bgi-position-center order-1 order-lg-2" style="background-image: url({{ asset('assets/media/misc/auth-bg.png') }})">
         <!--begin::Content-->
-        <div class="d-flex flex-column flex-center py-7 py-lg-15 px-5 px-md-15 w-100">
+        <div class="d-flex flex-column flex-center py-7 py-lg-15 px-5 px-md-15 w-100" style="background-color: #D36BA0;">
             <!--begin::Logo-->
             <a href="/" class="mb-0 mb-lg-12">
-                <img alt="Logo" src="{{ asset('assets/media/logos/custom-1.png') }}" class="h-60px h-lg-75px" />
+                <img alt="Logo" src="{{ asset('assets/media/logos/logo-ivira.jpg') }}" class="h-100px h-lg-150px" />
             </a>
             <!--end::Logo-->
             <!--begin::Image-->

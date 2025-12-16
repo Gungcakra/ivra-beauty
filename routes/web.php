@@ -3,7 +3,6 @@
 use App\Livewire\Admin\OperasionalReservasi;
 use App\Livewire\Admin\PromosiForm;
 use App\Livewire\Admin\UserForm;
-use App\Livewire\EmployeeManagement;
 use App\Livewire\Auth\Login;
 use App\Livewire\Admin\Dashboard;
 use App\Livewire\Admin\Layanan;
@@ -15,7 +14,6 @@ use App\Livewire\Admin\Reservasi as AdminReservasi;
 use App\Livewire\Guest\Login as LoginGuest;
 use App\Livewire\Guest\Register as RegisterGuest;
 use App\Livewire\Landing;
-use App\Livewire\Admin\User;
 use App\Livewire\Guest\Profile;
 use App\Livewire\Guest\Reservasi;
 
@@ -56,7 +54,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     //MASTERDATA ROUTES
 
     // USER
-    Route::get('/admin/user', User::class)->name('admin.user');
     Route::get('/admin/user/create', UserForm::class)->name('admin.user.create');
     Route::get('/admin/user/{userSelect}/edit/', UserForm::class)->name('admin.user.edit');
 

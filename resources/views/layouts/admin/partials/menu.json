@@ -10,10 +10,6 @@
         "icon": "fas fa-database",
         "subMenu": [
             {
-                "title": "Users",
-                "url": "/admin/user"
-            },
-            {
                 "title": "Layanan",
                 "url": "/admin/layanan"
             },
