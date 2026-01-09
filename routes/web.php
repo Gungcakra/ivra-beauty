@@ -30,7 +30,7 @@ Route::middleware(['guest'])->group(function () {
 });
 Route::middleware(['auth', 'role:guest'])->group(function () {
     // RESERVATION ROUTE
-    Route::get('/guest/layanan/{layanan}/reservasi', Reservasi::class)->name('guest.reservasi');
+    Route::get('/guest/layanan/reservasi', Reservasi::class)->name('guest.reservasi');
     Route::get('/guest/riwayat-reservasi', RiwayatReservasi::class)->name('guest.riwayat-reservasi');
     Route::get('/guest/profile', Profile::class)->name('guest.profile');
     Route::get('/guest/logout', [LoginGuest::class, 'logout'])->name('guest.logout');
