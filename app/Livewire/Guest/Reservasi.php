@@ -11,15 +11,13 @@ use Livewire\Component;
 #[Layout('layouts.guest.guest')]
 class Reservasi extends Component
 {
-    public $layanan, $dataLayanan;
-    public $tanggal, $waktu;
-    public function mount($layanan)
+    public $layanan, $selectedLayanan;
+    public $tanggal, $waktu, $search;
+  
+    public function selectService($id)
     {
-
-        $this->layanan = $layanan;
-        $this->dataLayanan = Layanan::find($this->layanan);
+        $this->selectedLayanan = Layanan::find($id);
     }
-
     public function reservasi()
     {
         try {
@@ -31,10 +29,10 @@ class Reservasi extends Component
 
             ModelsReservasi::create([
                 'id_user' => $user->pelanggan->id,
-                'id_layanan' => $this->dataLayanan->id,
+                'id_layanan' => $this->selectedLayanan->id,
                 'tanggal' => $this->tanggal,
                 'waktu' => $this->waktu,
-                'harga' => $this->dataLayanan->harga,
+                'harga' => $this->selectedLayanan->harga,
             ]);
 
             return redirect()->route('landing')->with('alert-success', 'Reservasi berhasil dibuat');
@@ -45,6 +43,10 @@ class Reservasi extends Component
 
     public function render()
     {
-        return view('livewire.pages.landing.reservasi');
+        return view('livewire.pages.landing.reservasi',[
+            'dataLayanan' => Layanan::when($this->search, function($query) {
+                $query->where('nama_layanan', 'like', '%'.$this->search.'%');
+            })->get(),
+        ]);
     }
 }

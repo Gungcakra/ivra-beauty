@@ -29,6 +29,7 @@
             </ul>
 
             @if(Auth::check())
+            <a href="{{ route('guest.reservasi') }}" class="primary-btn max-w-full w-100 m-1">Reservasi</a>
             <a href="{{ route('guest.logout') }}" class="primary-btn max-w-full w-100 m-1">Log Out</a>
             @else
             <a href="{{ route('guest.login') }}" class="primary-btn max-w-full w-100">Log In</a>
@@ -110,6 +111,7 @@
                 </div> -->
 
                 @if(Auth::check())
+                <a href="{{ route('guest.reservasi') }}" class="primary-btn d-none d-lg-block playFairFont">Reservasi </a>
                 <a href="{{ route('guest.logout') }}" class="primary-btn d-none d-lg-block playFairFont">Log Out </a>
                 @else
                 <a href="{{ route('guest.login') }}" class="primary-btn d-none d-lg-block playFairFont">Sign In </a>
