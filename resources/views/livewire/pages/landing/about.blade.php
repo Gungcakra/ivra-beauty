@@ -27,7 +27,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="{{  asset('guest/assets/images/about-1.webp')}}" class="about-img" alt="" />
+                        <img src="{{  asset('guest/assets/images/galery/photo (1).webp')}}" class="about-img" alt="" />
                     </div>
                     <div class="col-lg-6 z-2 position-relative">
                         <div class="line"></div>

@@ -4,9 +4,7 @@
        <div class="row">
          <form class="col-lg-6 col-xxl-5" wire:submit.prevent="register">
            <div class="pb-80">
-             <a href="index.html" class="py-2 py-xl-3 d-flex">
-               <!-- <img src="assets/images/logo-black.png" class="img-fluid" alt="" /> -->
-             </a>
+             
            </div>
            <div class="mb-4 mb-xl-5 pb-xxl-2">
              <a class="d-inline-flex align-items-center gap-2 text-n700 fw-semibold" href="{{ route('landing') }}"><i class="ph ph-arrow-left"></i> Kembali</a>
@@ -43,7 +41,7 @@
                  <button type="submit" class="btn btn-primary w-100 rounded-0 py-2 fw-medium text-bg1 mt-2 mt-xl-3">Registrasi</button>
                </div>
              </div>
-             <p class="copyright">Copyright © <a href="index.html" class="text-secondary3 fw-semibold">Ivira Beauty</a> All rights reserved.</p>
+             <p class="copyright">Copyright © <a href="{{ route('landing') }}" class="text-secondary3 fw-semibold">Ivira Beauty</a> All rights reserved.</p>
          </form>
 
        </div>

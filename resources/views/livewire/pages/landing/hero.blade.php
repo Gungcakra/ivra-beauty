@@ -1,7 +1,8 @@
 <!-- Banner section -->
     <section id="banner" class="banner space-header">
         <div class="banner-img">
-            <img src="{{  asset('guest/assets/images/home1-banner.webp')}}" loading="lazy" alt="" />
+            <img src="{{  asset('guest/assets/images/galery/hero.webp')}}" loading="lazy" alt="" />
+            <div class="overlay" style="background-color: rgba(0, 0, 0, 0.4); position: absolute; inset: 0;"></div>
         </div>
         <div class="bg-shadow"></div>
         <div class="banner-down-arrow">
