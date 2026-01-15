@@ -15,7 +15,7 @@ class Reservasi extends Model
 
     public function layanans()
     {
-        return $this->belongsToMany(Layanan::class, 'pelanggan_layanans', 'id_reservasi', 'id_layanan');
+        return $this->belongsToMany(Layanan::class, 'reservasi_layanans', 'id_reservasi',  'id_layanan');
     }
 
     public function transaksi()

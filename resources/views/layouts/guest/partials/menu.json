@@ -18,10 +18,5 @@
         "title": "Galeri",
         "url": "/#galeri",
         "active": false
-    },
-    {
-        "title": "Testimoni",
-        "url": "/#testimoni",
-        "active": false
     }
 ]
