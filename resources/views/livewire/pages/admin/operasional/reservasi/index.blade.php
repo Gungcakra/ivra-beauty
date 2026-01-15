@@ -7,7 +7,7 @@
             <!--begin::Page title-->
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                 <!--begin::Title-->
-                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reservasi Hari Ini</h1>
+                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reservasi</h1>
                 <!--end::Title-->
                 <!--begin::Breadcrumb-->
                 <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -80,7 +80,7 @@
                         </thead>
                         <tbody>
                             @if (count($data) < 1) <tr>
-                                <td colspan="8" class="text-center align-middle">Tidak ada reservasi hari ini</td>
+                                <td colspan="8" class="text-center align-middle">Tidak ada reservasi</td>
                                 </tr>
                                 @else
 
