@@ -3,7 +3,7 @@ namespace App\Livewire\Guest;
 
 use App\Models\Layanan;
 use App\Models\Reservasi as ModelsReservasi;
-use App\Models\PelangganLayanan; // Pastikan model ini ada
+use App\Models\ReservasiLayanan; // Pastikan model ini ada
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
@@ -57,20 +57,17 @@ class Reservasi extends Component
             $layanans = Layanan::whereIn('id', $this->selectedLayananIds)->get();
             $totalHarga = $layanans->sum('harga');
 
-            // 1. Simpan ke table Reservasi
             $reservasi = ModelsReservasi::create([
                 'id_user' => $user->id,
                 'tanggal' => $this->tanggal,
                 'waktu' => $this->waktu,
                 'harga' => $totalHarga,
-                'status' => 'pending' // Asumsi ada status
+                'status' => 'pending'
             ]);
 
-            // 2. Simpan ke table PelangganLayanan (Pivot)
             foreach ($this->selectedLayananIds as $idLayanan) {
-                PelangganLayanan::create([
+                ReservasiLayanan::create([
                     'id_reservasi' => $reservasi->id,
-                    'id_user' => $user->id,
                     'id_layanan' => $idLayanan,
                 ]);
             }
