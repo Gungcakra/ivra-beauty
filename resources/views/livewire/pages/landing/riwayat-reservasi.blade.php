@@ -20,34 +20,73 @@
      </section>
 
      <section class="pt-80 pb-80 z-3 position-relative">
-         <div class="container">
-             <div class="col-lg-12 z-3">
-                 @foreach ($reservasi as $item)
-                <div class="card shadow-sm mb-4 border-0">
-                    <div class="card-body p-4">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <h5 class="text-primary fw-bold mb-1"><i class="ph ph-star"></i> Layanan</h5>
-                                <h5 class="mb-0">{{ $item->layanan?->nama_layanan ?? 'N/A' }}</h5>
-                            </div>
-                            <div class="col-md-6">
-                                <h5 class="text-primary fw-bold mb-1">Harga</h5>
-                                <h5 class="mb-0">Rp {{ number_format($item->layanan?->harga ?? 0, 0, ',', '.') }}</h5>
-                            </div>
-                            <div class="col-md-6">
-                                <h5 class="text-primary fw-bold mb-1">Tanggal</h5>
-                                <h5 class="mb-0">{{ \Carbon\Carbon::parse($item->tanggal)->format('d/m/Y') }}</h5>
-                            </div>
-                            <div class="col-md-6">
-                                <h5 class="text-primary fw-bold mb-1">Waktu</h5>
-                                <h5 class="mb-0">{{ $item->waktu }}</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 @endforeach
+         <div class="container py-5">
+             <div class="row justify-content-center">
+                 <div class="col-lg-10">
+                     @foreach ($reservasi as $item)
+                     <div class="card border-0 shadow-sm mb-4" style=" overflow: hidden; background: #ffffff;">
+                         <div class="card-body p-0">
+                             <div class="row g-0">
+                                 <div class="col-md-1 d-none d-md-block bg-primary opacity-75"></div>
+
+                                 <div class="col-md-11 p-4">
+                                     <div class="d-flex justify-content-between align-items-start mb-4">
+                                         <div>
+                                             <small class="text-uppercase text-muted fw-bold ls-1 d-block mb-1" style="letter-spacing: 1px;">Layanan Terpilih</small>
+                                             <div class="d-flex flex-wrap gap-2">
+                                                 @foreach($item->layanans as $layanan)
+                                                 <span class="badge rounded bg-primary bg-opacity-10 text-primary px-3 py-2 fw-semibold">
+                                                     <i class="ph ph-sparkle me-1"></i> {{ $layanan->nama_layanan }}
+                                                 </span>
+                                                 @endforeach
+                                             </div>
+                                         </div>
+                                         <div class="text-end">
+                                             <small class="text-muted d-block mb-1">Total Pembayaran</small>
+                                             <h4 class="fw-bold text-primary mb-0">Rp {{ number_format($item->harga ?? 0, 0, ',', '.') }}</h4>
+                                         </div>
+                                     </div>
+
+                                     <hr class="border-light my-4">
+
+                                     <div class="row text-center text-md-start">
+                                         <div class="col-6 col-md-3 mb-3 mb-md-0">
+                                             <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+                                                 <div class="icon-box bg-light rounded-3 p-2 me-3">
+                                                     <i class="ph ph-calendar-blank fs-4 text-primary"></i>
+                                                 </div>
+                                                 <div>
+                                                     <small class="text-muted d-block">Tanggal</small>
+                                                     <span class="fw-bold">{{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}</span>
+                                                 </div>
+                                             </div>
+                                         </div>
+
+                                         <div class="col-6 col-md-3 mb-3 mb-md-0">
+                                             <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+                                                 <div class="icon-box bg-light rounded-3 p-2 me-3">
+                                                     <i class="ph ph-clock fs-4 text-primary"></i>
+                                                 </div>
+                                                 <div>
+                                                     <small class="text-muted d-block">Waktu</small>
+                                                     <span class="fw-bold">{{ $item->waktu }}</span>
+                                                 </div>
+                                             </div>
+                                         </div>
+
+                                         <!-- <div class="col-md-6 d-flex align-items-center justify-content-end">
+                                             <button class="btn btn-outline-primary btn-sm rounded px-4">
+                                                 Detail Reservasi
+                                             </button>
+                                         </div> -->
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     @endforeach
+                 </div>
              </div>
          </div>
+     </section>
  </div>
- </section>
- </div
