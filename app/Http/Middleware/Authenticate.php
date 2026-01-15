@@ -18,7 +18,7 @@ class Authenticate
             }
 
             if ($request->is('admin/*')) {
-                return redirect()->route('admin.login');
+                return redirect()->route('guest.login');
             }
 
             return redirect()->route('guest.login');

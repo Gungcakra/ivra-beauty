@@ -14,7 +14,7 @@ class Reservasi extends Component
     public function render()
     {
         return view('livewire.pages.admin.masterdata.reservasi.index',[
-            'data' => ModelsReservasi::with(['pelanggan', 'layanan'])
+            'data' => ModelsReservasi::with(['pelanggan', 'layanans'])
                 ->when($this->search, function ($query) {
                     $query->whereHas('pelanggan', function ($q) {
                         $q->where('nama', 'like', '%' . $this->search . '%')

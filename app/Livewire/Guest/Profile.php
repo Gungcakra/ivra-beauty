@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Guest;
 
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Layout;
@@ -15,9 +16,9 @@ class Profile extends Component
     public function mount()
     {
         $user = Auth::user();
-        $this->nama = $user->pelanggan->nama;
+        $this->nama = $user->nama;
         $this->email = $user->email;
-        $this->no_telp = $user->pelanggan->no_telp;
+        $this->no_telp = $user->no_telp;
     }
 
     public function updateProfile()
@@ -30,17 +31,16 @@ class Profile extends Component
                 'password' => 'nullable|string',
             ]);
 
-            $user = Auth::user();
+            $idUser = Auth::user();
+            $user = User::find($idUser->id);
             $user->email = $this->email;
             if (!empty($this->password)) {
                 $user->password = Hash::make($this->password);
             }
-            $user->save();
 
-            $pelanggan = $user->pelanggan;
-            $pelanggan->nama = $this->nama;
-            $pelanggan->no_telp = $this->no_telp;
-            $pelanggan->save();
+            $user->nama = $this->nama;
+            $user->no_telp = $this->no_telp;
+            $user->save();
 
             return redirect()->route('landing')->with('alert-success', 'Profile berhasil diperbarui.');
         } catch (\Exception $e) {

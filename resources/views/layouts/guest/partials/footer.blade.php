@@ -12,16 +12,10 @@
                         <p class="mb-4 pb-lg-3 text-n500">Selamat datang di Ivira Beauty, tempat kecantikan bertemu dengan layanan terbaik. Kami berkomitmen memberikan perawatan berkualitas tinggi untuk Anda.</p>
                         <ul class="social-link two">
                             <li>
-                                <a aria-label="social link" href="#"><i class="ph ph-facebook-logo"></i></a>
+                                <a aria-label="social link" href="https://wa.me/6281246198502"><i class="ph ph-whatsapp-logo"></i></a>
                             </li>
                             <li>
-                                <a aria-label="social link" href="#"><i class="ph ph-instagram-logo"></i></a>
-                            </li>
-                            <li>
-                                <a aria-label="social link" href="#"><i class="ph ph-linkedin-logo"></i></a>
-                            </li>
-                            <li>
-                                <a aria-label="social link" href="#"><i class="ph ph-twitter-logo"></i></a>
+                                <a aria-label="social link" href="https://www.instagram.com/ivirabeauty/"><i class="ph ph-instagram-logo"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -101,20 +95,18 @@
                                     <ul class="contact-two mb-0">
                                         <li class="contact-item">
                                             <div class="contact-icon">
-                                                <i class="ph ph-phone-call"></i>
+                                                <i class="ph ph-whatsapp-logo"></i>
                                             </div>
                                             <div class="d-flex flex-column gap-1">
-                                                <a href="tel:(808)555-0111">(808) 555-0111,</a>
-                                                <a href="tel:(808)555-0111">(302) 555-0107</a>
+                                                <a href="https://wa.me/6281246198502">081246198502 (WhatsApp)</a>
                                             </div>
                                         </li>
                                         <li class="contact-item">
                                             <div class="contact-icon">
-                                                <i class="ph ph-envelope-open"></i>
+                                                <i class="ph ph-instagram-logo"></i>
                                             </div>
                                             <div class="d-flex flex-column gap-1">
-                                                <a href="https://pixner.net/cdn-cgi/l/email-protection#b3daddd5dcf3d6cbd2dec3dfd69dd0dcde"><span class="__cf_email__" data-cfemail="ea83848c85aa8f928b879a868fc4898587">[email&#160;protected]</span>,</a>
-                                                <a href="https://pixner.net/cdn-cgi/l/email-protection#f69f989099b6938e979b869a93d895999b"><span class="__cf_email__" data-cfemail="5f363139301f3a273e322f333a713c3032">[email&#160;protected]</span></a>
+                                                <a href="https://www.instagram.com/ivirabeauty/">@ivirabeauty</a>
                                             </div>
                                         </li>
                                         <li class="contact-item">
@@ -122,14 +114,13 @@
                                                 <i class="ph ph-map-pin"></i>
                                             </div>
                                             <div class="d-flex flex-column gap-1">
-                                                <p>3605 Parker Rd.</p>
-                                                <p>3890 Poplar Dr.</p>
+                                                <p>Jl. Raya Dalung Jl. Raya Sempidi Badung, Dalung, Kec. Kuta Utara, Kabupaten Badung, Bali 80117.</p>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                           
+
                         </div>
                     </div>
                 </div>

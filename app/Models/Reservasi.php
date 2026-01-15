@@ -10,17 +10,16 @@ class Reservasi extends Model
 
     public function pelanggan()
     {
-        return $this->belongsTo(Pelanggan::class,'id_user');
+        return $this->belongsTo(User::class, 'id_user');
     }
 
-    public function layanan()
+    public function layanans()
     {
-        return $this->belongsTo(Layanan::class,'id_layanan');
+        return $this->belongsToMany(Layanan::class, 'pelanggan_layanans', 'id_reservasi', 'id_layanan');
     }
 
     public function transaksi()
     {
-        return $this->hasOne(Transaksi::class,'id_reservasi');
+        return $this->hasOne(Transaksi::class, 'id_reservasi');
     }
-    
 }

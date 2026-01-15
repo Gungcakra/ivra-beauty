@@ -97,8 +97,14 @@
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $transaksi->pelanggan?->nama }}</td>
                                     <td>{{ $transaksi->pelanggan?->no_telp }}</td>
-                                    <td>{{ $transaksi->pelanggan?->user?->email }}</td>
-                                    <td>{{ $transaksi->reservasi?->layanan?->nama_layanan }}</td>
+                                    <td>{{ $transaksi->pelanggan?->email }}</td>
+                                    <td>
+                                        <ul class="list-unstyled mb-0">
+                                            @foreach ($transaksi->reservasi->layanans as $layanan)
+                                            <li>{{ $layanan->nama_layanan }} - Rp {{ number_format($layanan->harga, 0, ',', '.') }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
                                     <td>{{ \Carbon\Carbon::parse($transaksi->tanggal_transaksi)->translatedFormat('d F Y') }}</td>
                                     <td>{{ $transaksi->metode_bayar }}</td>
                                     <td>Rp {{ number_format($transaksi->nominal_pembayaran  , 0, ',', '.') }}</td>
@@ -174,7 +180,7 @@
             @this.set('tanggal', start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
         });
 
-        
+
 
     });
 
@@ -192,8 +198,8 @@
             var maxWidth = 10; // Minimum width
             for (var R = range.s.r; R <= range.e.r; ++R) {
                 var cell = ws[XLSX.utils.encode_cell({
-                    r: R
-                    , c: C
+                    r: R,
+                    c: C
                 })];
                 if (cell && cell.v) {
                     maxWidth = Math.max(maxWidth, cell.v.toString().length);
@@ -209,14 +215,14 @@
         for (var R = range.s.r; R <= range.e.r; ++R) {
             for (var C = range.s.c; C <= range.e.c; ++C) {
                 var cellAddress = XLSX.utils.encode_cell({
-                    r: R
-                    , c: C
+                    r: R,
+                    c: C
                 });
                 if (!ws[cellAddress]) continue;
                 if (!ws[cellAddress].s) ws[cellAddress].s = {};
                 ws[cellAddress].s.alignment = {
-                    horizontal: "center"
-                    , vertical: "center"
+                    horizontal: "center",
+                    vertical: "center"
                 };
             }
         }
@@ -237,9 +243,8 @@
         //     }).filter(date => date !== null);
         //     dateRange = dates.length === 2 ? ' - ' + dates.join(' - ') : "";
         // }
-        
+
         XLSX.writeFile(wb, `Laporan Keuangan - ${dateRange}.xlsx`);
     }
-
 </script>
 @endpush

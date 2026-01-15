@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Transaksi extends Model
+class PelangganLayanan extends Model
 {
-    protected $guarded = ['id'];
+    public $guarded = ['id'];
 
     public function reservasi()
     {
@@ -17,4 +17,10 @@ class Transaksi extends Model
     {
         return $this->belongsTo(User::class, 'id_user');
     }
+
+    public function layanan()
+    {
+        return $this->belongsTo(Layanan::class, 'id_layanan');
+    }
+
 }

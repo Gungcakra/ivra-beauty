@@ -13,7 +13,7 @@ class OperasionalReservasi extends Component
     public function render()
     {
         return view('livewire.pages.admin.operasional.reservasi.index',[
-            'data' => Reservasi::with(['pelanggan', 'layanan'])
+            'data' => Reservasi::with(['pelanggan', 'layanans'])
                 ->when($this->search, function ($query) {
                     $query->whereHas('pelanggan', function ($q) {
                         $q->where('nama', 'like', '%' . $this->search . '%')
@@ -26,7 +26,6 @@ class OperasionalReservasi extends Component
                 ->when($this->status, function ($query) {
                     $query->where('status', $this->status);
                 })
-                ->where('tanggal', now()->format('Y-m-d'))
                 ->whereDoesntHave('transaksi')
                 ->orderBy('created_at', 'desc')
                 ->get(),

@@ -90,9 +90,15 @@
                                     <td class="align-middle">{{ $index + 1 }}</td>
                                     <td class="align-middle">{{ $reservasi->pelanggan?->nama }}</td>
                                     <td class="align-middle">{{ $reservasi->pelanggan?->no_telp }}</td>
-                                    <td class="align-middle">{{ $reservasi->pelanggan?->user?->email }}</td>
-                                    <td class="align-middle">{{ $reservasi->layanan?->nama_layanan }}</td>
-                                    <td class="align-middle">Rp {{ number_format($reservasi->layanan?->harga, 0, ',', '.') }}</td>
+                                    <td class="align-middle">{{ $reservasi->pelanggan?->email }}</td>
+                                    <td class="align-middle">
+                                        <ul class="list-unstyled mb-0">
+                                            @foreach ($reservasi->layanans as $layanan)
+                                                <li>{{ $layanan->nama_layanan }} - Rp {{ number_format($layanan->harga, 0, ',', '.') }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
+                                    <td class="align-middle">Rp {{ number_format($reservasi->layanans->sum('harga'), 0, ',', '.') }}</td>
                                     <td class="align-middle">{{ \Carbon\Carbon::parse($reservasi->waktu)->translatedFormat('d F Y H:i') }}</td>
                                     <td class="align-middle">
                                         <a href="{{ route('admin.operasional.reservasi.transaksi', $reservasi->id) }}" class="btn btn-primary btn-sm">TRANSAKSI <i class="bi bi-arrow-right"></i></a>
