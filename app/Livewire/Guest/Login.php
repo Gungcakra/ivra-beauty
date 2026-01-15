@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Guest;
 
+use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
@@ -24,12 +25,16 @@ class Login extends Component
                 return;
             }
 
-            if (\Illuminate\Support\Facades\Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
+            if (Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
                 session()->regenerate();
 
-                session(['user_id' => \Illuminate\Support\Facades\Auth::id()]);
+                session(['user_id' => Auth::id()]);
 
-                return redirect(route('landing'));
+                if(Auth::user()->role !== 'guest'){
+                    return redirect()->route('admin.dashboard');
+                } else {
+                    return redirect(route('landing'));
+                }
             } else {
                 $this->dispatch('alert-error', 'Email atau password salah.');
             }
@@ -40,7 +45,7 @@ class Login extends Component
 
     public function logout()
     {
-        \Illuminate\Support\Facades\Auth::logout();
+        Auth::logout();
         session()->invalidate();
         session()->regenerateToken();
 

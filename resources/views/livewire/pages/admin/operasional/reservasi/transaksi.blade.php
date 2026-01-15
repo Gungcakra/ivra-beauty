@@ -66,11 +66,6 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label fw-semibold">Layanan</label>
-                            <p class="text-dark">{{ $nama_layanan }}</p>
-                        </div>
-
-                        <div class="mb-3">
                             <label class="form-label fw-semibold">Tanggal Reservasi</label>
                             <p class="text-dark">{{ \Carbon\Carbon::parse($reservasi->tanggal)->translatedFormat('d F Y') }}</p>
                         </div>
@@ -88,9 +83,13 @@
                         <div class="card p-4">
                             <h3 class="mb-4 fw-bold">Ringkasan Pembayaran</h3>
 
-                            <div class="mb-3 d-flex justify-content-between align-items-center">
-                                <span class="fw-semibold">Harga Layanan</span>
-                                <span class="fw-bold text-dark">Rp {{ number_format($reservasi->harga ?? 0, 0, ',', '.') }}</span>
+                            <div class="mb-3 d-flex justify-content-between flex-column">
+                                @foreach($reservasi->layanans as $layanan)
+                                <div class="mb-3 d-flex flex-wrap justify-content-between align-items-center border-bottom pb-3">
+                                    <span class="fw-semibold text-gray-700">{{ $layanan->nama_layanan }}</span>
+                                    <span class="fw-bold text-primary fs-6">Rp {{ number_format($layanan->harga ?? 0, 0, ',', '.') }}</span>
+                                </div>
+                                @endforeach
                             </div>
 
                             <hr class="my-3" />
@@ -219,7 +218,7 @@
                 });
             });
 
-           
+
 
         });
     </script>

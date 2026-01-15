@@ -15,14 +15,12 @@ class OperasionalReservasiTransaksi extends Component
 
     public function mount($reservasi)
     {
-        $this->reservasi = Reservasi::with(['pelanggan', 'layanan'])->findOrFail($reservasi);
+        $this->reservasi = Reservasi::with(['pelanggan', 'layanans'])->findOrFail($reservasi);
         $userData = $this->reservasi->pelanggan;
         $layananData = $this->reservasi->layanan;
         $this->nama = $userData->nama;
         $this->email = $userData->email;
         $this->no_telp = $userData->no_telp;
-        $this->nama_layanan = $layananData->nama_layanan;
-        $this->harga_layanan = $layananData->harga_layanan;
     }
 
     public function setMetodeBayar($method)
@@ -52,7 +50,7 @@ class OperasionalReservasiTransaksi extends Component
                 'id_user' => $this->reservasi->id_user,
                 'id_reservasi' => $this->reservasi->id,
                 'metode_bayar' => $this->metode_bayar,
-                'nominal_pembayaran' => $this->reservasi->harga,
+                'nominal_pembayaran' => $this->reservasi->layanans->sum('harga'),
                 'tanggal_transaksi' => now(),
             ]);
             return redirect()->route('admin.operasional.reservasi')->with('print-invoice', $transaksi->id);

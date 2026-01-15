@@ -24,16 +24,12 @@ class Register extends Component
                 'password' => 'required|string',
             ]);
 
-            $user = User::create([
+            User::create([
+                'nama' => $this->nama,
+                'no_telp' => $this->no_telp,
                 'email' => $this->email,
                 'password' => Hash::make($this->password),
                 'role' => 'guest',
-            ]);
-
-            Pelanggan::create([
-                'id_user' => $user->id,
-                'nama' => $this->nama,
-                'no_telp' => $this->no_telp,
             ]);
             return redirect()->route('guest.login')->with('alert-success', 'Registrasi berhasil! Silakan login.');
         } catch (\Exception $e) {

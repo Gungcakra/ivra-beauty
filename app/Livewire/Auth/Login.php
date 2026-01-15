@@ -43,7 +43,7 @@ class Login extends Component
         session()->invalidate();
         session()->regenerateToken();
 
-        return redirect()->route('admin.login');
+        return redirect()->route('guest.login');
     }
 
     public function render()

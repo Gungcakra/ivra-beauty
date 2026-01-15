@@ -15,7 +15,7 @@ class RiwayatReservasi extends Component
     public function mount()
     {
         $user = Auth::user();
-        $this->reservasi = Reservasi::where('id_user', $user->pelanggan->id)->get();
+        $this->reservasi = Reservasi::where('id_user', $user->id)->get();
     }
     public function render()
     {

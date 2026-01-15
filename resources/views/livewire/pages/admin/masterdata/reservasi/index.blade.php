@@ -89,9 +89,15 @@
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $reservasi->pelanggan?->nama }}</td>
                                     <td>{{ $reservasi->pelanggan?->no_telp }}</td>
-                                    <td>{{ $reservasi->pelanggan?->user?->email }}</td>
-                                    <td>{{ $reservasi->layanan?->nama_layanan }}</td>
-                                    <td>Rp {{ number_format($reservasi->layanan?->harga, 0, ',', '.') }}</td>
+                                    <td>{{ $reservasi->pelanggan?->email }}</td>
+                                    <td>
+                                        <ul class="list-unstyled mb-0">
+                                            @foreach ($reservasi->layanans as $layanan)
+                                            <li>{{ $layanan->nama_layanan }} - Rp {{ number_format($layanan->harga, 0, ',', '.') }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
+                                    <td>Rp {{ number_format($reservasi->layanans->sum('harga'), 0, ',', '.') }}</td>
                                     <td>{{ \Carbon\Carbon::parse($reservasi->waktu)->translatedFormat('d F Y H:i') }}</td>
                                 </tr>
                                 @endforeach
