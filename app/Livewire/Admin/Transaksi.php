@@ -16,7 +16,9 @@ class Transaksi extends Component
         return view('livewire.pages.admin.masterdata.transaksi.index', [
             'data' => ModelsTransaksi::when($this->tanggal, function ($query) {
                 $dates = explode(' to ', $this->tanggal);
-                if (count($dates) === 2) {
+                $dates = array_map(fn($date) => \Carbon\Carbon::createFromFormat('d F Y', trim($date))->format('Y-m-d'), $dates);
+
+                if (\count($dates) === 2) {
                     $query->whereBetween('tanggal_transaksi', [$dates[0], $dates[1]]);
                 } else {
                     $query->where('tanggal_transaksi', $this->tanggal);

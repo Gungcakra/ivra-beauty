@@ -98,7 +98,7 @@
                                         </ul>
                                     </td>
                                     <td>Rp {{ number_format($reservasi->layanans->sum('harga'), 0, ',', '.') }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($reservasi->waktu)->translatedFormat('d F Y H:i') }}</td>
+                                    <td class="align-middle">{{ \Carbon\Carbon::parse($reservasi->tanggal)->translatedFormat('d F Y ') . \Carbon\Carbon::parse($reservasi->waktu)->translatedFormat('H:i') }}</td>
                                 </tr>
                                 @endforeach
                                 @endif
