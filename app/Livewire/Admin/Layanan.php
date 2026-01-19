@@ -46,7 +46,7 @@ class Layanan extends Component
         return view('livewire.pages.admin.masterdata.layanan.index', data: [
             'data' => ModelsLayanan::query()
                 ->when($this->search, function ($query) {
-                    $query->where('nama', 'like', '%' . $this->search . '%')
+                    $query->where('nama_layanan', 'like', '%' . $this->search . '%')
                         ->orWhere('deskripsi', 'like', '%' . $this->search . '%');
                 })
                 ->paginate(10),

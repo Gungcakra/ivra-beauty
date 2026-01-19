@@ -10,10 +10,10 @@ use Livewire\Component;
 class Transaksi extends Component
 {
 
-    public $tanggal;
+    public $tanggal, $search;
     public function render()
     {
-        return view('livewire.pages.admin.masterdata.transaksi.index',[
+        return view('livewire.pages.admin.masterdata.transaksi.index', [
             'data' => ModelsTransaksi::when($this->tanggal, function ($query) {
                 $dates = explode(' to ', $this->tanggal);
                 if (count($dates) === 2) {
@@ -21,7 +21,14 @@ class Transaksi extends Component
                 } else {
                     $query->where('tanggal_transaksi', $this->tanggal);
                 }
-            })->get(),
+            })
+                ->when($this->search, function ($query) {
+                    $query->whereHas('reservasi.pelanggan', function ($q) {
+                        $q->where('nama', 'like', '%' . $this->search . '%')
+                            ->orWhere('no_telp', 'like', '%' . $this->search . '%');
+                    });
+                })
+                ->get(),
         ]);
     }
 }

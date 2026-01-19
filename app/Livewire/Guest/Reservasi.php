@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Livewire\Guest;
 
 use App\Models\Layanan;
@@ -45,14 +46,19 @@ class Reservasi extends Component
 
     public function reservasi()
     {
-        
+
         try {
             $this->validate([
                 'tanggal' => 'required|date|after_or_equal:today',
                 'waktu' => 'required',
             ]);
-            DB::beginTransaction();
+            $checkSameReservation = ModelsReservasi::where('tanggal', $this->tanggal)
+                ->where('id_user', Auth::id())
+                ->exists();
 
+            if ($checkSameReservation) {
+                throw ValidationException::withMessages(['tanggal' => 'Anda sudah memiliki reservasi pada tanggal tersebut.']);
+            }
             $user = Auth::user();
             $layanans = Layanan::whereIn('id', $this->selectedLayananIds)->get();
             $totalHarga = $layanans->sum('harga');
@@ -72,10 +78,8 @@ class Reservasi extends Component
                 ]);
             }
 
-            DB::commit();
             return redirect()->route('landing')->with('alert-success', 'Reservasi berhasil dibuat');
         } catch (ValidationException $e) {
-            DB::rollBack();
             $this->dispatch('alert-error', collect($e->errors())->flatten()->first());
         }
     }
