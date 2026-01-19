@@ -20,12 +20,7 @@
                  <img src="{{  asset('guest/assets/images/service-1.png')}}" width="72" height="72" alt="" />
                  <h4>{{ $service->nama_layanan }}</h4>
                  <p>{{ $service->deskripsi }}</p>
-                 <div class="d-flex align-items-center">
-                     <div class="readmore">
-                         <a href="{{ route('guest.reservasi',$service->id) }}" class="playFairFont">Reservasi Layanan</a>
-                         <i class="ph ph-arrow-right"></i>
-                     </div>
-                 </div>
+                
              </div>
             @endforeach
          </div>
