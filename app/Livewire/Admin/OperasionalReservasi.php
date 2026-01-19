@@ -21,8 +21,10 @@ class OperasionalReservasi extends Component
                     });
                 })
                 ->when($this->tanggal, function ($query) {
-                    $query->where('tanggal', $this->tanggal);
+                    $date = \Carbon\Carbon::createFromFormat('d F y', $this->tanggal)->format('Y-m-d');
+                    $query->whereDate('tanggal', $date);
                 })
+                    
                 ->when($this->status, function ($query) {
                     $query->where('status', $this->status);
                 })

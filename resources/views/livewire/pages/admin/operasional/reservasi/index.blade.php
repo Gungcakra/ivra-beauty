@@ -50,8 +50,8 @@
         <!--begin::Content container-->
         <div id="kt_app_content_container" class="app-container container-xxl">
             <div class="card p-5">
-                <div class="d-flex w-full gap-2">
-                    <div class="d-flex align-items-center position-relative my-1">
+                <div class="d-flex w-full gap-4">
+                    <div class="d-flex align-items-center position-relative my-1 gap-4">
                         <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-5">
                             <span class="path1"></span>
                             <span class="path2"></span>
@@ -62,6 +62,12 @@
                             class="form-control form-control-solid w-250px ps-12"
                             placeholder="Cari Reservasi"
                             wire:model.live.debounce.100ms="search" />
+
+                        <div class="d-flex align-items-center position-relative my-1" wire:ignore>
+                            <i class="fas fa-calendar fs-3 position-absolute ms-5"></i>
+                            <input class="form-control form-control-solid w-250px ps-12" placeholder="Pilih Tanggal Reservasi" id="date" data-clear="true"/>
+                        </div>
+
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -94,12 +100,12 @@
                                     <td class="align-middle">
                                         <ul class="list-unstyled mb-0">
                                             @foreach ($reservasi->layanans as $layanan)
-                                                <li>{{ $layanan->nama_layanan }} - Rp {{ number_format($layanan->harga, 0, ',', '.') }}</li>
+                                            <li>{{ $layanan->nama_layanan }} - Rp {{ number_format($layanan->harga, 0, ',', '.') }}</li>
                                             @endforeach
                                         </ul>
                                     </td>
                                     <td class="align-middle">Rp {{ number_format($reservasi->layanans->sum('harga'), 0, ',', '.') }}</td>
-                                    <td class="align-middle">{{ \Carbon\Carbon::parse($reservasi->waktu)->translatedFormat('d F Y H:i') }}</td>
+                                    <td class="align-middle">{{ \Carbon\Carbon::parse($reservasi->tanggal)->translatedFormat('d F Y ') . \Carbon\Carbon::parse($reservasi->waktu)->translatedFormat('H:i') }}</td>
                                     <td class="align-middle">
                                         <a href="{{ route('admin.operasional.reservasi.transaksi', $reservasi->id) }}" class="btn btn-primary btn-sm">TRANSAKSI <i class="bi bi-arrow-right"></i></a>
                                     </td>
@@ -124,7 +130,7 @@
     iframe.style.display = 'none';
     iframe.src = `/print-invoice/{{ session('print-invoice') }}`;
     document.body.appendChild(iframe);
-    
+
     iframe.onload = () => {
         setTimeout(() => {
             iframe.contentWindow.focus();
@@ -138,6 +144,12 @@
 </script>
 @endif
 <script>
+    $('#date').flatpickr({
+        dateFormat: "d F y",
+        onChange: function(selectedDates, dateStr, instance) {
+            @this.set('tanggal', dateStr);
+        }
+    });
     $(function() {
         Livewire.on('show-modal', () => {
             var modalEl = document.getElementById('layananModal');
