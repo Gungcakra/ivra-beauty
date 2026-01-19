@@ -173,11 +173,11 @@
 
         $('#tanggal').daterangepicker({
             locale: {
-                format: 'YYYY-MM-DD'
+                format: 'DD MMMM YYYY'
             },
             opens: 'left'
         }, function(start, end, label) {
-            @this.set('tanggal', start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            @this.set('tanggal', start.format('DD MMMM YYYY') + ' to ' + end.format('DD MMMM YYYY'));
         });
 
 
@@ -244,7 +244,7 @@
         //     dateRange = dates.length === 2 ? ' - ' + dates.join(' - ') : "";
         // }
 
-        XLSX.writeFile(wb, `Laporan Keuangan - ${dateRange}.xlsx`);
+        XLSX.writeFile(wb, `Laporan Keuangan ${dateRange}.xlsx`);
     }
 </script>
 @endpush
