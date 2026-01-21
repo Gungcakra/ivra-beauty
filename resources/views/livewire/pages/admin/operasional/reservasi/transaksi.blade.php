@@ -123,18 +123,18 @@
                                     </label>
                                     <!--end::Radio-->
                                     <!--begin::Radio-->
-                                    <label class="btn bg-light btn-color-gray-600 btn-active-text-gray-800 border border-3 border-gray-100 border-active-primary btn-active-light-primary w-100 px-4 {{ $metode_bayar === 'transfer' ? 'active' : '' }}" data-kt-button="true">
+                                    <label class="btn bg-light btn-color-gray-600 btn-active-text-gray-800 border border-3 border-gray-100 border-active-primary btn-active-light-primary w-100 px-4 {{ $metode_bayar === 'qris' ? 'active' : '' }}" data-kt-button="true">
                                         <!--begin::Input-->
-                                        <input class="btn-check" type="radio" name="method" wire:click="setMetodeBayar('transfer')" value="transfer" wire:model="metode_bayar" />
+                                        <input class="btn-check" type="radio" name="method" wire:click="setMetodeBayar('qris')" value="qris" wire:model="metode_bayar" />
                                         <!--end::Input-->
                                         <!--begin::Icon-->
-                                        <i class="ki-duotone ki-credit-cart fs-2hx mb-2 pe-0">
+                                        <i class="fa-solid fa-qrcode fs-2hx mb-2 pe-0">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>
                                         <!--end::Icon-->
                                         <!--begin::Title-->
-                                        <span class="fs-7 fw-bold d-block">Transfer</span>
+                                        <span class="fs-7 fw-bold d-block">Qris</span>
                                         <!--end::Title-->
                                     </label>
                                     <!--end::Radio-->

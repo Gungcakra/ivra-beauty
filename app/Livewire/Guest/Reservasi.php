@@ -53,11 +53,11 @@ class Reservasi extends Component
                 'waktu' => 'required',
             ]);
             $checkSameReservation = ModelsReservasi::where('tanggal', $this->tanggal)
-                ->where('id_user', Auth::id())
+                ->where('waktu', $this->waktu)
                 ->exists();
 
             if ($checkSameReservation) {
-                throw ValidationException::withMessages(['tanggal' => 'Anda sudah memiliki reservasi pada tanggal tersebut.']);
+                throw ValidationException::withMessages(['tanggal' => 'Sudah ada reservasi pada tanggal dan waktu tersebut. Silahkan pilih waktu lain.']);
             }
             $user = Auth::user();
             $layanans = Layanan::whereIn('id', $this->selectedLayananIds)->get();
