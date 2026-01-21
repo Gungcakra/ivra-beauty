@@ -12,7 +12,7 @@ class Promosi extends Component
 {
     public $gambarPromosi, $idToDelete;
 
-    protected $listeners = ['deletePromosiConfirmed'];
+    protected $listeners = ['deletePromosi'];
     public function showPhoto($id)
     {
         $promosi = ModelsPromosi::find($id);
@@ -36,7 +36,7 @@ class Promosi extends Component
         $this->idToDelete = $id;
     }
 
-    public function deletePromosiConfirmed()
+    public function deletePromosi()
     {
         try {
             $promosi = ModelsPromosi::find($this->idToDelete);
@@ -46,7 +46,7 @@ class Promosi extends Component
                     Storage::delete($promosi->gambar_promosi);
                 }
                 $promosi->delete();
-                $this->dispatch('alert-success', 'Promosi berhasil dihapus.');
+                return redirect()->route('admin.promosi')->with('alert-success', 'Promosi berhasil dihapus.');
             } else {
                 $this->dispatch('alert-error', 'Promosi tidak ditemukan.');
             }

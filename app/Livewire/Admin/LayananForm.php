@@ -46,7 +46,7 @@ class LayananForm extends Component
                 'harga' => $this->harga,
             ]);
 
-            return redirect()->route('admin.layanan')->with('success-alert', 'Layanan berhasil disimpan.');
+            return redirect()->route('admin.layanan')->with('alert-success', 'Layanan berhasil disimpan.');
         } catch (\Illuminate\Validation\ValidationException $e) {
             $this->dispatch('alert-error', collect($e->errors())->flatten()->first());
         }
@@ -72,7 +72,7 @@ class LayananForm extends Component
             'harga' => $this->harga,
         ]);
 
-        return redirect()->route('admin.layanan')->with('success-alert', 'Layanan berhasil diperbarui.');
+        return redirect()->route('admin.layanan')->with('alert-success', 'Layanan berhasil diperbarui.');
     }
 
     public function render()

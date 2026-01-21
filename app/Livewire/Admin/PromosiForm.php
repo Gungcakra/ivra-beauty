@@ -52,7 +52,7 @@ class PromosiForm extends Component
                 'gambar_promosi' => $path,
             ]);
 
-            return redirect()->route('admin.promosi')->with('success-alert', 'Promosi berhasil ditambahkan.');
+            return redirect()->route('admin.promosi')->with('alert-success', 'Promosi berhasil ditambahkan.');
         } catch (\Exception $e) {
             $this->dispatch('alert-error', $e->getMessage());
         }
@@ -78,7 +78,7 @@ class PromosiForm extends Component
 
             $promosi->save();
 
-            return redirect()->route('admin.promosi')->with('success-alert', 'Promosi berhasil diperbarui.');
+            return redirect()->route('admin.promosi')->with('alert-success', 'Promosi berhasil diperbarui.');
         } catch (\Exception $e) {
             $this->dispatch('alert-error', $e->getMessage());
         }
