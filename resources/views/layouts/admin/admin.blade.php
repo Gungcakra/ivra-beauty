@@ -97,18 +97,18 @@
     <script data-navigate-once src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script data-navigate-once src="https://unpkg.com/qr-scanner@1.4.2/qr-scanner.legacy.min.js"></script>
 
-    @if(session()->has('success-alert'))
+    @if(session()->has('alert-success'))
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire("Berhasil!", "{{ session('success-alert') }}", "success");
+            Swal.fire("Berhasil!", "{{ session('alert-success') }}", "success");
         });
     </script>
     @endif
 
-    @if(session()->has('error-alert'))
+    @if(session()->has('alert-error'))
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire("Gagal!", "{{ session('error-alert') }}", "error");
+            Swal.fire("Gagal!", "{{ session('alert-error') }}", "error");
         });
     </script>
     @endif

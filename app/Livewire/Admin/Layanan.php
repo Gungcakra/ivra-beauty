@@ -35,10 +35,10 @@ class Layanan extends Component
                 $layanan->delete();
                 $this->dispatch('delete-success',  'Layanan berhasil dihapus.');
             } else {
-                $this->dispatch('error-alert', 'Layanan tak ditemukan.');
+                $this->dispatch('alert-error', 'Layanan tak ditemukan.');
             }
         } catch (\Exception $e) {
-            $this->dispatch('error-alert',  $e->getMessage());
+            $this->dispatch('alert-error',  $e->getMessage());
         }
     }
     public function render()

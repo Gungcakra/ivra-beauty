@@ -113,7 +113,7 @@ class UserForm extends Component
                 ['nama' => $this->nama, 'no_telp' => $this->no_telp]
             );
         }
-        return redirect()->route('admin.user')->with('success-alert', 'User berhasil diperbarui.');
+        return redirect()->route('admin.user')->with('alert-success', 'User berhasil diperbarui.');
     }
 
     public function render()
