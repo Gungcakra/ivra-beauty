@@ -44,7 +44,7 @@
     </section>
 
     <!-- Modal Promosi -->
-    <div id="promosiModal" class="modal" tabindex="-1">
+    <div id="promosiModal" class="modal modal-lg" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
