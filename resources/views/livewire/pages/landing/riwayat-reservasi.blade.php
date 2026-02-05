@@ -24,7 +24,7 @@
              <div class="row justify-content-center">
                  <div class="col-lg-10">
                      @foreach ($reservasi as $item)
-                     <div class="card border-0 shadow-sm mb-4" style=" overflow: hidden; background: #ffffff;">
+                     <div class="card border-0 shadow-sm mb-4" style="overflow: hidden; background: #ffffff;">
                          <div class="card-body p-0">
                              <div class="row g-0">
                                  <div class="col-md-1 d-none d-md-block bg-primary opacity-75"></div>
@@ -73,12 +73,33 @@
                                                  </div>
                                              </div>
                                          </div>
+                                     </div>
 
-                                         <!-- <div class="col-md-6 d-flex align-items-center justify-content-end">
-                                             <button class="btn btn-outline-primary btn-sm rounded px-4">
-                                                 Detail Reservasi
+                                     {{-- Bagian Logika Tombol --}}
+                                     <hr class="border-light my-4">
+                                     <div class="row">
+                                         <div class="col-12 text-end">
+                                             @if($item->transaksi)
+                                             {{-- Jika sudah ada transaksi, tampilkan form komplain --}}
+                                             <div class="text-start">
+                                                 <small class="text-uppercase text-muted fw-bold ls-1 d-block mb-2" style="letter-spacing: 1px;">Komplain</small>
+                                                 @if($item->komplain)
+                                                 <p class="mb-0 text-muted italic">"{{ $item->komplain }}"</p>
+                                                 @else
+                                                 <textarea class="form-control" placeholder="Tulis komplain Anda di sini..." rows="3" wire:model="komplain"></textarea>
+                                                 <button wire:click="submitKomplain({{ $item->id }})" class="btn btn-primary btn-sm mt-2 text-white">
+                                                     <i class="ph ph-paper-plane-tilt me-1"></i> Kirim Komplain
+                                                 </button>
+                                                 @endif
+                                             </div>
+                                             @else
+                                             <button
+                                                 wire:click="batalReservasi({{ $item->id }})"
+                                                 class="btn btn-outline-danger btn-sm">
+                                                 <i class="ph ph-trash me-1"></i> Batalkan Reservasi
                                              </button>
-                                         </div> -->
+                                             @endif
+                                         </div>
                                      </div>
                                  </div>
                              </div>
@@ -90,3 +111,25 @@
          </div>
      </section>
  </div>
+ @push('scripts')
+ <script>
+    $(function(){
+        Livewire.on('confirm-batal-reservasi', () => {
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                text: "Reservasi yang dibatalkan tidak dapat dikembalikan!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, batalkan reservasi!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Livewire.dispatch('batalReservasiConfirmed');
+                }
+            });
+        });
+    })
+ </script>
+ @endpush
