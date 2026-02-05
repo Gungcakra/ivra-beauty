@@ -75,6 +75,7 @@
                                 <th>Nama Layanan</th>
                                 <th>Harga</th>
                                 <th>Tanggal & Waktu</th>
+                                <th>Komplain</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -99,6 +100,7 @@
                                     </td>
                                     <td>Rp {{ number_format($reservasi->layanans->sum('harga'), 0, ',', '.') }}</td>
                                     <td class="align-middle">{{ \Carbon\Carbon::parse($reservasi->tanggal)->translatedFormat('d F Y ') . \Carbon\Carbon::parse($reservasi->waktu)->translatedFormat('H:i') }}</td>
+                                    <td>{{ $reservasi->komplain ?? '-' }}</td>
                                 </tr>
                                 @endforeach
                                 @endif

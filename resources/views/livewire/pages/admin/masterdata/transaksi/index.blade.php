@@ -81,6 +81,7 @@
                                 <th>Email</th>
                                 <th>Nama Layanan</th>
                                 <th>Tanggal & Waktu</th>
+                                <th>Status Pembayaran</th>
                                 <th>Metode Pembayaran</th>
                                 <th>Nominal Pembayaran</th>
                             </tr>
@@ -106,12 +107,15 @@
                                         </ul>
                                     </td>
                                     <td>{{ \Carbon\Carbon::parse($transaksi->tanggal_transaksi)->translatedFormat('d F Y') }}</td>
+                                    <td>
+                                        <span class="bg-success p-2 rounded-3 text-dark">Lunas</span>
+                                    </td>
                                     <td>{{ $transaksi->metode_bayar }}</td>
                                     <td>Rp {{ number_format($transaksi->nominal_pembayaran  , 0, ',', '.') }}</td>
                                 </tr>
                                 @endforeach
                                 <tr>
-                                    <td colspan="7" class="text-end"><strong>Total Pendapatan:</strong></td>
+                                    <td colspan="8" class="text-end"><strong>Total Pendapatan:</strong></td>
                                     <td><strong>Rp {{ number_format($data->sum('nominal_pembayaran'), 0, ',', '.') }}</strong></td>
                                 </tr>
                                 @endif
