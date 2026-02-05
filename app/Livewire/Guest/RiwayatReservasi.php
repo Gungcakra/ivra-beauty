@@ -23,7 +23,7 @@ class RiwayatReservasi extends Component
     {
         $reservasi = Reservasi::find($idBatalReservasi);
         $this->idBatalReservasi = $idBatalReservasi;
-        if($reservasi) {
+        if ($reservasi) {
             $this->dispatch('confirm-batal-reservasi');
         } else {
             $this->dispatch('alert-error', 'Reservasi tidak ditemukan.');
@@ -32,7 +32,7 @@ class RiwayatReservasi extends Component
     public function batalReservasiConfirmed()
     {
         $reservasi = Reservasi::find($this->idBatalReservasi);
-        if($reservasi) {
+        if ($reservasi) {
             $reservasi->delete();
             return redirect()->route('guest.riwayat-reservasi')->with('alert-success', 'Reservasi berhasil dibatalkan.');
         } else {
@@ -42,13 +42,13 @@ class RiwayatReservasi extends Component
     public function submitKomplain($id)
     {
         $reservasi = Reservasi::find($id);
-        if(!$this->komplain) {
-            $this->dispatch('alert-error','Harap isi kolom komplain sebelum mengirim.');
+        if (!$this->komplain) {
+            $this->dispatch('alert-error', 'Harap isi kolom komplain sebelum mengirim.');
+        } else{
+            $reservasi->komplain = $this->komplain;
+            $reservasi->save();
+            return redirect()->route('guest.riwayat-reservasi')->with('alert-success', 'Komplain berhasil dikirim.');
         }
-
-        $reservasi->komplain = $this->komplain;
-        $reservasi->save();
-       return redirect()->route('guest.riwayat-reservasi')->with('alert-success', 'Komplain berhasil dikirim.');
 
     }
     public function render()
